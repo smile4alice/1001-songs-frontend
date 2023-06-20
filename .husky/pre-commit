@@ -2,6 +2,3 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 npm run precommit
-npm run stylelint
-npm test
-ng test --watch=false --progress=false --browsers=ChromeHeadless

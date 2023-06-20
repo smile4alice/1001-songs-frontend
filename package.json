@@ -48,8 +48,9 @@
   },
   "lint-staged": {
     "*": [
-      "prettier --write"
-    ]
+      "npx prettier --write ."
+    ],
+    ".husky/pre-commit": []
   },
   "husky": {
     "hooks": {
