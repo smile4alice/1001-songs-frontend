@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "stylelint": "npx stylelint \"src/**/*.scss\"",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "prepare": "husky install~"
   },
   "private": true,
   "dependencies": {
@@ -21,7 +22,6 @@
     "@angular/platform-browser-dynamic": "^16.1.0",
     "@angular/router": "^16.1.0",
     "e2e": "0.0.8",
-    "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
     "protractor": "^7.0.0",
@@ -34,6 +34,7 @@
     "@angular/cli": "~16.1.0",
     "@angular/compiler-cli": "^16.1.0",
     "@types/jasmine": "~4.3.0",
+    "husky": "^8.0.3",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
