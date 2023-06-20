@@ -51,11 +51,5 @@
       "npx prettier --write ."
     ],
     ".husky/pre-commit": []
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run precommit",
-      "pre-push": "npm run stylelint && ng test --watch=false --progress=false --browsers=ChromeHeadless"
-    }
   }
 }
