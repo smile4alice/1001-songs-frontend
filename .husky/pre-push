@@ -1,5 +1,18 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+# Отримати назву головної гілки
+dev_branch="dev"
+
+# Отримати оновлення з віддаленого сховища
+git fetch origin $dev_branch
+
+# Перевірити, чи локальна головна гілка оновлена
+if git diff --quiet $dev_branch remotes/origin/$dev_branch; then
+  echo "Головна гілка $dev_branch оновлена. Можна продовжити пуш."
+else
+  echo "Головна гілка $dev_branch не оновлена. Будь ласка, оновіть перед пушем."
+  exit 1
+fi
 npm run stylelint
 ng test --watch=false --progress=false --browsers=ChromeHeadless
