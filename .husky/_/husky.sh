@@ -1,4 +1,20 @@
 #!/usr/bin/env sh
+hook_name=$(basename "$0")
+if [ "$hook_name" = "pre-push" ]; then
+  # Отримати назву головної гілки
+  dev_branch="dev"
+
+  # Отримати оновлення з віддаленого сховища
+  git fetch origin $dev_branch
+
+  # Перевірити, чи локальна головна гілка оновлена
+  if git diff --quiet $dev_branch remotes/origin/$dev_branch; then
+    echo "Головна гілка $dev_branch оновлена. Можна продовжити пуш."
+  else
+    echo "Головна гілка $dev_branch не оновлена. Будь ласка, оновіть перед пушем."
+    exit 1
+  fi
+fi
 
 if [ -z "$husky_skip_init" ]; then
   debug () {
