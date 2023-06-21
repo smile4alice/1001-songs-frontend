@@ -1,17 +1,4 @@
 #!/usr/bin/env sh
-# Отримати назву головної гілки
-dev_branch="main"
-
-# Отримати оновлення з віддаленого сховища
-git fetch
-
-# Перевірити, чи локальна головна гілка оновлена
-if git diff --quiet $dev_branch remotes/origin/$dev_branch; then
-  echo "Головна гілка $dev_branch оновлена. Можна продовжити пуш."
-else
-  echo "Головна гілка $dev_branch не оновлена. Будь ласка, оновіть перед пушем."
-  exit 1
-fi
 
 if [ -z "$husky_skip_init" ]; then
   debug () {
