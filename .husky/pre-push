@@ -21,7 +21,7 @@ fi
 #   echo "Гілка $current_branch оновлена з головною гілкою $dev_branch. Можна продовжити пуш."
 # else
 #   echo "Гілка $current_branch не оновлена з головною гілкою $dev_branch. Будь ласка, оновіть перед пушем."
-#   git pull origin dev
+
 
 npm run stylelint
 ng test --watch=false --progress=false --browsers=ChromeHeadless
