@@ -20,7 +20,7 @@ fi
 if [ "$base_commit" = "$(git rev-parse dev)" ]; then
   echo "Гілка $current_branch оновлена до гілки dev."
 else
-  echo "Гілка $current_branch не оновлена до гілки dev. Спершу оновіть гілку $target_branch."
+  echo "Гілка $current_branch не оновлена до гілки dev. Спершу оновіть гілку $target_branch до гілки DEV."
   exit 1
 fi
 
