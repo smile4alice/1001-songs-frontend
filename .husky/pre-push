@@ -5,7 +5,7 @@
 dev_branch="dev"
 # Отримати назву поточної гілки
 current_branch=$(git symbolic-ref --short HEAD)
-base_commit=$(git merge-base $current_branch dev)
+
 # Отримати оновлення з віддаленого сховища
 git fetch origin $dev_branch
 
@@ -14,13 +14,6 @@ if git diff --quiet $dev_branch remotes/origin/$dev_branch; then
   echo "Головна гілка $dev_branch оновлена. Можна продовжити пуш."
 else
   echo "Головна гілка $dev_branch не оновлена. Будь ласка, оновіть перед пушем."
-  exit 1
-fi
-
-if [ "$base_commit" = "$(git rev-parse dev)" ]; then
-  echo "Гілка $current_branch оновлена до гілки dev."
-else
-  echo "Гілка $current_branch не оновлена до гілки dev. Спершу оновіть гілку $target_branch до гілки DEV."
   exit 1
 fi
 
