@@ -4,6 +4,7 @@ on:
   pull_request:
     branches:
       - dev
+    types: close
 
 jobs:
   build-and-deploy:
@@ -25,6 +26,7 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
+        if: github.event.pull_request.merged == true
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: main
