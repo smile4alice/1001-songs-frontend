@@ -17,5 +17,6 @@ else
   exit 1
 fi
 
+ng lint
 npm run stylelint
 ng test --watch=false --progress=false --browsers=ChromeHeadless
