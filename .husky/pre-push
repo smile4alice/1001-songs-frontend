@@ -9,26 +9,11 @@ current_branch=$(git symbolic-ref --short HEAD)
 # Отримати назву поточної гілки
 current_branch=$(git symbolic-ref --short HEAD)
 
-# Отримати хеш першого коміту на поточній гілці
-first_commit=$(git rev-list --max-parents=0 HEAD)
-
 # Отримати усі коміти з гілки dev
 dev_commits=$(git rev-list $dev_branch)
 
 # Отримати оновлення з віддаленого сховища
 git fetch origin $dev_branch
-
-# Перевірити, чи гілка dev має спільний коміт з першим комітом поточної гілки
-if echo "$dev_commits" | grep -q $first_commit; then
-  echo -e "\e[92mГілка $current_branch була створена з гілки $dev_branch\e[0m"
-else
-  echo -e "\e[91mГілка $current_branch була створена не з гілки $dev_branch\e[0m"
-  read -p "Чи бажаєте ви продовжити ПУШ (y/n)? " answer
-  if [ "$answer" != "y" ]; then
-    echo -e "\e[91mПуш зупинено\e[0m"
-    exit 1
-  fi
-fi
 
 # Перевірити, чи локальна головна гілка оновлена
 if git diff --quiet $dev_branch remotes/origin/$dev_branch; then
