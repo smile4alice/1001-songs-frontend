@@ -3,19 +3,14 @@
 
 # Отримати назву головної гілки
 dev_branch="dev"
-# Отримати назву поточної гілки
-current_branch=$(git symbolic-ref --short HEAD)
 
 # Отримати назву поточної гілки
 current_branch=$(git symbolic-ref --short HEAD)
-
-# Отримати усі коміти з гілки dev
-dev_commits=$(git rev-list $dev_branch)
 
 # Отримати оновлення з віддаленого сховища
 git fetch origin $dev_branch
 
-# Перевірити, чи локальна головна гілка оновлена
+# Перевірити, чи локальна гілка DEV оновлена
 if git diff --quiet $dev_branch remotes/origin/$dev_branch; then
   echo -e "\e[92mГоловна гілка $dev_branch оновлена. Можна продовжити пуш.\e[0m"
 else
