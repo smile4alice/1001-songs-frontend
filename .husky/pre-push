@@ -12,11 +12,14 @@ current_branch=$(git symbolic-ref --short HEAD)
 # Отримати хеш першого коміту на поточній гілці
 first_commit=$(git rev-list --max-parents=0 HEAD)
 
+# Отримати усі коміти з гілки dev
+dev_commits=$(git rev-list $dev_branch)
+
 # Отримати оновлення з віддаленого сховища
 git fetch origin $dev_branch
 
 # Перевірити, чи гілка dev має спільний коміт з першим комітом поточної гілки
-if git merge-base --is-ancestor $first_commit $dev_branch; then
+if echo "$dev_commits" | grep -q $first_commit; then
   echo -e "\e[92mГілка $current_branch була створена з гілки $dev_branch\e[0m"
 else
   echo -e "\e[91mГілка $current_branch була створена не з гілки $dev_branch\e[0m"
