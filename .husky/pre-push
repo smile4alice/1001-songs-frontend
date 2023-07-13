@@ -6,8 +6,23 @@ dev_branch="dev"
 # Отримати назву поточної гілки
 current_branch=$(git symbolic-ref --short HEAD)
 
+# Отримати назву поточної гілки
+current_branch=$(git symbolic-ref --short HEAD)
+
 # Отримати оновлення з віддаленого сховища
 git fetch origin $dev_branch
+
+# Перевірити, чи поточна гілка була створена з гілки "dev"
+if git merge-base --is-ancestor $dev_branch $current_branch; then
+  echo -e "\e[92m'$current_branch' була створена з гілки $dev_branch\e[0m"
+else
+  echo -e "\e[91m'$current_branch' була створена не з гілки $dev_branch\e[0m"
+  read -p "Чи бажаєте ви продовжити ПУШ (y/n)? " answer
+  if [ "$answer" != "y" ]; then
+    echo -e "\e[91mПуш зупинено\e[0m"
+    exit 1
+  fi
+fi
 
 # Перевірити, чи локальна головна гілка оновлена
 if git diff --quiet $dev_branch remotes/origin/$dev_branch; then
