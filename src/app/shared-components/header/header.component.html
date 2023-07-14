@@ -1,1 +1,29 @@
-<p>header works!</p>
+<header class="header">
+   <nav class="header_main-container">
+      <div class="header_logo">
+         <img src="./assets/img/header/logo.png" alt="logo" class="header_logo-img">
+      </div>
+      <div class="header_menu">
+         <ul class="header_menu-links">
+            <li class="header_menu-item"><a href="#">Про проект</a></li>
+            <li class="header_menu-item"><a href="#">Мапа</a></li>
+            <li class="header_menu-item"><a href="#">Освітній розділ</a></li>
+            <li class="header_menu-item"><a href="#">Новини</a></li>
+            <li class="header_menu-item"><a href="#">Експедиції</a></li>
+         </ul>
+      </div>
+      <div class="header_actions">
+         <div class="header_actions-search">
+            <img src="./assets/img/header/search.svg" class="header_search-img">
+         </div>
+         <div class="header_actions-lang">
+            <ul [ngClass]="!openSwitcher ? 'header_actions-lang-list' : 'header_actions-lang-list open'">
+               <li *ngFor="let item of langslist" class="header_actions-lang-item" (click)="selectLang(item.lang)"><span>{{item.lang}}</span></li>
+            </ul>
+         </div>
+         <div class="header_actions-donate">
+            <button class="header_donate-button">Підтримати</button>
+         </div>
+      </div>
+   </nav>
+</header>
