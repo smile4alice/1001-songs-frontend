@@ -14,11 +14,11 @@
       </div>
       <div class="header_actions">
          <div class="header_actions-search">
-            <img src="./assets/img/header/search.svg" class="header_search-img">
+            <img src="./assets/img/header/search.svg" class="header_search-img" alt="search icons">
          </div>
          <div class="header_actions-lang">
             <ul [ngClass]="!openSwitcher ? 'header_actions-lang-list' : 'header_actions-lang-list open'">
-               <li *ngFor="let item of langslist" class="header_actions-lang-item" (click)="selectLang(item.lang)"><span>{{item.lang}}</span></li>
+               <li *ngFor="let item of langslist; let i=index" class="header_actions-lang-item" (click)="selectLang(item.lang)" (keyup.enter)="selectLang(item.lang)" tabindex="i"><span>{{item.lang}}</span></li>
             </ul>
          </div>
          <div class="header_actions-donate">
