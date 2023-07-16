@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { MainComponent } from './main.component';
-import { SharedModule } from '../shared-components/shared.module';
 import { AppRoutingModule } from '../app-routing.module';
 import { AboutComponent } from './component/about/about.component';
+import { SharedModule } from '../shared/shared.module';
+import { HomeRoutingModule } from './component/home/home-routing.module';
 
 @NgModule({
    declarations: [
@@ -11,6 +12,7 @@ import { AboutComponent } from './component/about/about.component';
     ],
    imports: [
       SharedModule,
+      HomeRoutingModule,
       AppRoutingModule
    ],
    exports: [

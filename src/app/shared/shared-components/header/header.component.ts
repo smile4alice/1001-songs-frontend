@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -12,14 +13,22 @@ export class HeaderComponent {
   private _engLang = {id:2, lang:'Eng', active:false};
   public langslist = [this._ukrLang];
 
+  constructor(
+    private _translate: TranslateService
+  ){
+    _translate.setDefaultLang('ua');      
+  }
+
   selectLang(lang:string){
     this.openSwitcher = !this.openSwitcher;
     if(lang === 'Укр'){
       this._ukrLang.active = true;
       this._engLang.active = false;
+      this._translate.use('ua');
     } else{
       this._ukrLang.active = false;
       this._engLang.active = true;
+      this._translate.use('en');
     }
     const list = [this._ukrLang, this._engLang];
     
