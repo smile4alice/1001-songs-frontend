@@ -5,6 +5,7 @@ import { FooterComponent } from './shared-components/footer/footer.component';
 import { AdminComponent } from './shared-components/admin/admin.component';
 import { UserComponent } from './shared-components/user/user.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @NgModule({
    declarations: [
@@ -15,7 +16,9 @@ import { TranslateModule } from '@ngx-translate/core';
    ],
    imports:[
       CommonModule,
-      TranslateModule
+      TranslateModule,
+      RouterLink,
+      RouterLinkActive
    ],
    exports: [
       HeaderComponent,

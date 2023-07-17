@@ -15,9 +15,7 @@ export class HeaderComponent {
 
   constructor(
     private _translate: TranslateService
-  ){
-    _translate.setDefaultLang('ua');      
-  }
+  ){}
 
   selectLang(lang:string){
     this.openSwitcher = !this.openSwitcher;
@@ -25,7 +23,7 @@ export class HeaderComponent {
       this._ukrLang.active = true;
       this._engLang.active = false;
       this._translate.use('ua');
-    } else{
+    } else if(lang === 'Eng'){
       this._ukrLang.active = false;
       this._engLang.active = true;
       this._translate.use('en');

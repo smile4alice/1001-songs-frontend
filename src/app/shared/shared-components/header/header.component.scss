@@ -17,7 +17,7 @@ a {
    padding: 0 40px;
    background-color: var(--header-bgcolor);
 
-   &-main-container {
+   &__nav {
       width: 100%;
       max-width: 1440px;
       height: 100px;
@@ -26,71 +26,74 @@ a {
       flex-flow: row nowrap;
       justify-content: space-between;
       align-items: center;
-   }
 
-   &-logo {
-      width: 80px;
-      height: 76px;
-   }
-
-   &-menu {
-      &-links {
-         width: 550px;
-         display: flex;
-         justify-content: space-between;
-         font-size: 16px;
-         font-weight: 400;
-      }
-   }
-
-   &-actions {
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: space-between;
-      align-items: center;
-
-      &-search {
-         .header-search-img {
-            width: 24px;
-            height: 24px;
-
-            &:hover {
-               cursor: pointer;
-            }
-         }
+      &-logo {
+         width: 80px;
+         height: 76px;
       }
 
-      &-lang {
-         margin: 0 25px;
-
-         &-list {
-            padding: 8px;
-            width: 29px;
-            border: 1px solid #000;
-            border-radius: 50%;
-
-            &:hover {
-               cursor: pointer;
-            }
-         }
-
-         .open {
-            border-radius: 25%;
-
-            & li:first-child {
-               margin-bottom: 5px;
-            }
-         }
-      }
-
-      &-donate {
-         .header-donate-button {
-            padding: 12px 24px;
-            border: none;
-            border-radius: 20px;
-            background: #FFE600;
+      &-menu {
+         .menu__list {
+            width: 550px;
+            display: flex;
+            justify-content: space-between;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 400;
+         }
+      }
+
+      &-actions {
+         display: flex;
+         flex-flow: row nowrap;
+         justify-content: space-between;
+         align-items: center;
+
+         .actions__search {
+            &-img {
+               width: 24px;
+               height: 24px;
+
+               &:hover {
+                  cursor: pointer;
+               }
+            }
+         }
+
+         .actions__lang {
+            margin: 0 25px;
+
+            &-list {
+               padding: 8px;
+               width: 29px;
+               height: 29px;
+               border: 1px solid #000;
+               border-radius: 50%;
+               line-height: 29px;
+
+               &:hover {
+                  cursor: pointer;
+               }
+            }
+
+            .open {
+               border: 1px solid transparent;
+
+               & li:first-child {
+                  margin-bottom: 5px;
+                  border-bottom: 1px solid #000;
+               }
+            }
+         }
+
+         .actions__donate {
+            &-button {
+               padding: 12px 24px;
+               border: none;
+               border-radius: 20px;
+               background: #FFE600;
+               font-size: 16px;
+               font-weight: 600;
+            }
          }
       }
    }

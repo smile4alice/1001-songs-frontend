@@ -19,6 +19,18 @@
    },
    "about": {
       "stub": "The 'About the project' page is under development"
+   },
+   "map":{
+      "stub": "Page 'Map' under development"
+   },
+   "news":{
+      "stub": "Page 'News' under development"
+   },
+   "expeditions":{
+      "stub": "Page 'Expeditions' under development"
+   },
+   "science":{
+      "stub": "Page 'Educational Section' under development"
    }
 }
    
