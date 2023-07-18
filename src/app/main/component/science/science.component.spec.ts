@@ -1,16 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AboutComponent } from './about.component';
+
+import { ScienceComponent } from './science.component';
 import { TranslateModule } from '@ngx-translate/core';
-describe('AboutComponent', () => {
-  let component: AboutComponent;
-  let fixture: ComponentFixture<AboutComponent>;
+
+describe('ScienceComponent', () => {
+  let component: ScienceComponent;
+  let fixture: ComponentFixture<ScienceComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AboutComponent],
+      declarations: [ScienceComponent],
       imports: [TranslateModule.forRoot()]
     });
-    fixture = TestBed.createComponent(AboutComponent);
+    fixture = TestBed.createComponent(ScienceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
