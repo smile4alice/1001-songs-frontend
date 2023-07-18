@@ -1,1 +1,16 @@
-// here are the fonts that will be used in the project
+@font-face {
+   font-family: 'Work Sans';
+   src: url('../assets/fonts/WorkSans/WorkSans-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+   font-family: 'Yeseva One';
+   src: url('../assets/fonts/YesevaOne/YesevaOne-Regular.ttf') format('truetype');
+}
+
+:root {
+   --primary-font: 'Work Sans';
+   --secondary-font: 'Yeseva One';
+   --tertiary-font: 'Work Sans';
+   --quaternary-font: 'Yeseva One', sans-serif;
+}
