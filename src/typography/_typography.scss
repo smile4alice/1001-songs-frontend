@@ -1,1 +1,112 @@
-// here are the styles of text tags and clases (h1, p, classes, etc.) that are used in the project.
+@import '../typography/fonts';
+@import '../typography/colors';
+
+// for buttons
+
+@mixin button-1440($padding: 12px 24px, $background: var(--primary-yellow), $border: none, $border-radius: 100px, $font-family: var(--primary-font), $font-weight: 600, $font-size: 16px, $color: var(--primary-black)) {
+   padding: $padding;
+   background: $background;
+   border: $border;
+   border-radius: $border-radius;
+   font-family: $font-family;
+   font-weight: $font-weight;
+   font-size: $font-size;
+   color: $color;
+}
+
+@mixin a-menu-1440($font-family: var(--secondary-font), $font-weight: 400, $font-size: 16px, $color: var(--primary-black)) {
+   font-family: $font-family;
+   font-weight: $font-weight;
+   font-size: $font-size;
+   color: $color;
+}
+
+@mixin li-lang-1440($padding: 0, $width: 41px, $height: 41px, $line-heigh: 41px, $text-align: center, $font-family: var(--primary-font), $font-weight: 600, $font-size: 16px, $color: var(--primary-black)) {
+   padding: $padding;
+   width: $width;
+   height: $height;
+   line-height: $line-heigh;
+   text-align: $text-align;
+   font-family: $font-family;
+   font-weight: $font-weight;
+   font-size: $font-size;
+   color: $color;
+}
+
+// for pages
+@mixin title-1440($font-family: var(--secondary-font), $font-weight: 400, $font-size: 92px, $color: rgba(254, 254, 254, 100%)) {
+   font-family: $font-family;
+   font-weight: $font-weight;
+   font-size: $font-size;
+   color: $color;
+}
+
+@mixin p-first-screen-1440($font-family: var(--secondary-font), $font-weight: 400, $font-size: 92px, $color: rgba(254, 254, 254, 100%)) {
+   font-family: $font-family;
+   font-weight: $font-weight;
+   font-size: $font-size;
+   color: $color;
+}
+
+@mixin h1-1440($font-family: var(--primary-font), $font-weight: 400, $font-size: 20px, $color: var(--primary-black)) {
+   font-family: $font-family;
+   font-weight: $font-weight;
+   font-size: $font-size;
+   color: $color;
+}
+
+@mixin h2-1-1440($font-family: var(--secondary-font), $font-weight: 400, $font-size: 24px, $color: var(--primary-black)) {
+   font-family: $font-family;
+   font-weight: $font-weight;
+   font-size: $font-size;
+   color: $color;
+}
+
+@mixin h2-2-1440($font-family: var(--secondary-font), $font-weight: 400, $font-size: 28px, $color: var(--primary-black)) {
+   font-family: $font-family;
+   font-weight: $font-weight;
+   font-size: $font-size;
+   color: $color;
+}
+
+@mixin p-1440($font-family: var(--primary-font), $font-weight: 400, $font-size: 16px, $color: var(--primary-black)) {
+   font-family: $font-family;
+   font-weight: $font-weight;
+   font-size: $font-size;
+   color: $color;
+}
+
+@mixin p-strong-1440($font-family: var(--primary-font), $font-weight: 600, $font-size: 20px, $color: var(--primary-black)) {
+   font-family: $font-family;
+   font-weight: $font-weight;
+   font-size: $font-size;
+   color: $color;
+}
+
+@mixin a-1440($font-family: var(--primary-font), $font-weight: 400, $font-size: 16px, $color: var(--primary-black), $text-decoration: underline) {
+   font-family: $font-family;
+   font-weight: $font-weight;
+   font-size: $font-size;
+   color: $color;
+   text-decoration: $text-decoration;
+}
+
+@mixin a-strong-1440($font-family: var(--primary-font), $font-weight: 600, $font-size: 16px, $color: var(--primary-black), $text-decoration: underline) {
+   font-family: $font-family;
+   font-weight: $font-weight;
+   font-size: $font-size;
+   color: $color;
+   text-decoration: $text-decoration;
+}
+
+@mixin span-date-1440($font-family: var(--primary-font), $font-weight: 400, $font-size: 16px, $color: var(--primary-black)) {
+   font-family: $font-family;
+   font-weight: $font-weight;
+   font-size: $font-size;
+}
+
+@mixin span-marque-1440($font-family: var(--quaternary-font), $font-weight: 400, $font-size: 32px, $color: rgba(255, 230, 0, 100%)) {
+   font-family: $font-family;
+   font-weight: $font-weight;
+   font-size: $font-size;
+}

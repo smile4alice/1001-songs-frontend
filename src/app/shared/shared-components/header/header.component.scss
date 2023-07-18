@@ -1,3 +1,5 @@
+@import '../../../../typography/typography';
+
 ul,
 li,
 a {
@@ -16,6 +18,7 @@ a {
    width: 100vw;
    padding: 0 40px;
    background-color: var(--header-bgcolor);
+
 
    .nav {
       width: 100%;
@@ -37,8 +40,10 @@ a {
             width: 550px;
             display: flex;
             justify-content: space-between;
-            font-size: 16px;
-            font-weight: 400;
+
+            &-item-link {
+               @include a-menu-1440;
+            }
          }
       }
 
@@ -63,12 +68,10 @@ a {
             margin: 0 25px;
 
             &-list {
-               padding: 5px;
-               width: 29px;
-               height: 29px;
+               @include li-lang-1440;
+
                border: 1px solid #000;
                border-radius: 50%;
-               line-height: 29px;
 
                &:hover {
                   cursor: pointer;
@@ -78,21 +81,16 @@ a {
 
          &__lang-list--open {
             border: 1px solid transparent;
+            color: white;
 
             & li:first-child {
-               margin-bottom: 5px;
                border-bottom: 1px solid #000;
             }
          }
 
          &__donate {
             &-button {
-               padding: 12px 24px;
-               border: none;
-               border-radius: 20px;
-               background: #FFE600;
-               font-size: 16px;
-               font-weight: 600;
+               @include button-1440;
             }
          }
       }
