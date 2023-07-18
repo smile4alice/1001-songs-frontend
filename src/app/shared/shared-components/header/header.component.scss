@@ -17,7 +17,7 @@ a {
    left: 0;
    width: 100vw;
    padding: 0 40px;
-   background-color: var(--header-bgcolor);
+   background-color: var(--bg-color-header);
 
 
    .nav {
@@ -41,9 +41,9 @@ a {
             display: flex;
             justify-content: space-between;
 
-            &-item-link {
-               @include a-menu-1440;
-            }
+            // &-item-link {
+            //    // @include a-menu-1440;
+            // }
          }
       }
 
@@ -68,7 +68,7 @@ a {
             margin: 0 25px;
 
             &-list {
-               @include li-lang-1440;
+               // @include li-lang-1440;
 
                border: 1px solid #000;
                border-radius: 50%;
@@ -88,11 +88,12 @@ a {
             }
          }
 
-         &__donate {
-            &-button {
-               @include button-1440;
-            }
-         }
+         // &__donate {
+         //    &-button {
+
+         //       @include button-1440;
+         //    }
+         // }
       }
    }
 }

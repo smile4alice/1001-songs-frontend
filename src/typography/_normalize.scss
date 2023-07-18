@@ -6,7 +6,7 @@
 // =============================================================================
 // Normalize.scss settings
 // =============================================================================
-
+@import '../typography/typography';
 
 // Set to true if you want to add support for IE6 and IE7
 // Notice: setting to true might render some elements
@@ -15,7 +15,7 @@ $legacy_support_for_ie: false !default; // Used also in Compass
 
 
 // Set the default font family here so you don't have to override it later
-$normalized_font_family: sans-serif !default;
+$normalized_font_family: var(--primary-font) !default;
 
 $normalize_headings: true !default;
 
@@ -34,7 +34,7 @@ $h5_margin: 1.67em 0 !default;
 $h6_margin: 2.33em 0 !default;
 
 $background: #fff !default;
-$color: #000 !default;
+$color: var(--text-color-primary) !default;
 
 // =============================================================================
 // HTML5 display definitions
@@ -134,7 +134,10 @@ body {
 
 a {
    // 1
-
+   margin: 0;
+   padding: 0;
+   list-style: none;
+   text-decoration: none;
    background: transparent;
 
    // 2
