@@ -17,7 +17,7 @@ a {
    padding: 0 40px;
    background-color: var(--header-bgcolor);
 
-   &__nav {
+   .nav {
       width: 100%;
       max-width: 1440px;
       height: 100px;
@@ -27,13 +27,13 @@ a {
       justify-content: space-between;
       align-items: center;
 
-      &-logo {
+      .logo {
          width: 80px;
          height: 76px;
       }
 
-      &-menu {
-         .menu__list {
+      .menu {
+         &__list {
             width: 550px;
             display: flex;
             justify-content: space-between;
@@ -42,13 +42,13 @@ a {
          }
       }
 
-      &-actions {
+      .actions {
          display: flex;
          flex-flow: row nowrap;
          justify-content: space-between;
          align-items: center;
 
-         .actions__search {
+         &__search {
             &-img {
                width: 24px;
                height: 24px;
@@ -59,11 +59,11 @@ a {
             }
          }
 
-         .actions__lang {
+         &__lang {
             margin: 0 25px;
 
             &-list {
-               padding: 8px;
+               padding: 5px;
                width: 29px;
                height: 29px;
                border: 1px solid #000;
@@ -74,18 +74,18 @@ a {
                   cursor: pointer;
                }
             }
+         }
 
-            .open {
-               border: 1px solid transparent;
+         &__lang-list--open {
+            border: 1px solid transparent;
 
-               & li:first-child {
-                  margin-bottom: 5px;
-                  border-bottom: 1px solid #000;
-               }
+            & li:first-child {
+               margin-bottom: 5px;
+               border-bottom: 1px solid #000;
             }
          }
 
-         .actions__donate {
+         &__donate {
             &-button {
                padding: 12px 24px;
                border: none;

@@ -1,24 +1,24 @@
 <header class="header">
-   <nav class="header__nav">
-      <div class="header__nav-logo">
-         <a routerLink = "" routerLinkActive="active"><img src="./assets/img/header/logo.png" alt="logo" class="logo__img"></a>
+   <nav class="nav">
+      <div class="logo">
+         <a class="logo__link" routerLink = "" routerLinkActive="active"><img class="logo__link-img" src="./assets/img/header/logo.png" alt="logo"></a>
       </div>
-      <div class="header__nav-menu">
+      <div class="menu">
          <ul class="menu__list">
-            <li class="menu__list-item"><a routerLink = "/about" routerLinkActive="active">{{ 'header.nav-menu.about' | translate }}</a></li>
-            <li class="menu__list-item"><a routerLink = "/map" routerLinkActive="active">{{ 'header.nav-menu.map' | translate }}</a></li>
-            <li class="menu__list-item"><a routerLink = "/science" routerLinkActive="active">{{ 'header.nav-menu.educational-section' | translate }}</a></li>
-            <li class="menu__list-item"><a routerLink = "/news" routerLinkActive="active">{{ 'header.nav-menu.news' | translate }}</a></li>
-            <li class="menu__list-item"><a routerLink = "/expeditions" routerLinkActive="active">{{ 'header.nav-menu.expedition' | translate }}</a></li>
+            <li class="menu__list-item"><a class="menu__list-item-link" routerLink = "/about" routerLinkActive="active">{{ 'header.nav-menu.about' | translate }}</a></li>
+            <li class="menu__list-item"><a class="menu__list-item-link" routerLink = "/map" routerLinkActive="active">{{ 'header.nav-menu.map' | translate }}</a></li>
+            <li class="menu__list-item"><a class="menu__list-item-link" routerLink = "/science" routerLinkActive="active">{{ 'header.nav-menu.educational-section' | translate }}</a></li>
+            <li class="menu__list-item"><a class="menu__list-item-link" routerLink = "/news" routerLinkActive="active">{{ 'header.nav-menu.news' | translate }}</a></li>
+            <li class="menu__list-item"><a class="menu__list-item-link" routerLink = "/expeditions" routerLinkActive="active">{{ 'header.nav-menu.expedition' | translate }}</a></li>
          </ul>
       </div>
-      <div class="header__nav-actions">
+      <div class="actions">
          <div class="actions__search">
             <img src="./assets/img/header/search.svg" class="actions__search-img" alt="search icons">
          </div>
          <div class="actions__lang">
-            <ul [ngClass]="!openSwitcher ? 'actions__lang-list' : 'actions__lang-list open'">
-               <li *ngFor="let item of langslist; let i=index" class="actions__lang-item" (click)="selectLang(item.lang)" (keyup.enter)="selectLang(item.lang)" tabindex="i"><span>{{item.lang}}</span></li>
+            <ul [ngClass]="openSwitcher ? 'actions__lang-list actions__lang-list--open' : 'actions__lang-list'">
+               <li *ngFor="let item of langslist; let i=index" class="actions__lang-list-item" (click)="selectLang(item.lang)" (keyup.enter)="selectLang(item.lang)" tabindex="i"><span>{{item.lang}}</span></li>
             </ul>
          </div>
          <div class="actions__donate">
