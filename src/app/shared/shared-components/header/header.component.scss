@@ -42,10 +42,6 @@ a {
             display: flex;
             justify-content: space-between;
 
-            .burger__switcher {
-               display: none;
-            }
-
             &__item-link {
                @include link-desktop;
 
@@ -135,6 +131,8 @@ a {
 // Burger icon markup
 
 .burger {
+   display: none;
+
    &__input {
       display: none;
    }
@@ -143,9 +141,9 @@ a {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 44px;
-      height: 44px;
-      border: 2px solid transparent;
+      width: 33px;
+      height: 33px;
+      border: 1px solid transparent;
       border-radius: 50%;
       cursor: pointer;
 
@@ -153,10 +151,10 @@ a {
       .burger__icon::after,
       .burger__icon {
          background: var(--text-color-primary);
-         width: 32px;
-         height: 3px;
+         width: 28px;
+         height: 2px;
          border-radius: 2px;
-         transition: 0.3s;
+         transition: 0.2s;
       }
 
       .burger__icon::before,
@@ -191,6 +189,65 @@ a {
 
    &__input:checked+&__button {
       background-color: transparent;
-      border: 2px solid var(--text-color-primary);
+      border: 1px solid var(--text-color-primary);
+   }
+}
+
+/* Common styles for screens 1023px - 768px wide and smaller */
+
+@media (width >=768px) and (max-width < 1024px) {
+   .header {
+      width: 100vw;
+      box-sizing: border-box;
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      .nav {
+         padding: 0 30px;
+         width: calc(100vw - 60px);
+         justify-content: end;
+
+         .logo {
+            // width: 80px;
+            // height: 76px;
+            order: 1;
+         }
+
+         .menu {
+            order: 3;
+            width: 33px;
+            height: 100%;
+
+            .burger {
+               display: block;
+               margin-top: 35px;
+               margin-left: auto;
+            }
+
+            &-list {
+               margin-top: 10px;
+               padding: 20px;
+               width: 200px;
+               height: 150px;
+               flex-direction: column;
+               align-items: center;
+               background: var(--text-color-secondary);
+               position: relative;
+               right: 206px;
+
+               &__item {
+                  padding-bottom: 5px;
+               }
+            }
+         }
+
+         .actions {
+            order: 2;
+            margin-left: auto;
+            margin-right: 30px;
+         }
+
+      }
    }
 }

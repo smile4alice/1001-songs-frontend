@@ -4,13 +4,13 @@
          <a class="logo__link" routerLink = "" routerLinkActive="active"><img class="logo__link-img" src="./assets/img/header/logo.png" alt="logo"></a>
       </div>
       <div class="menu">
+         <div class="burger">
+            <input type="checkbox" id="input-checkbox" class="burger__input">
+            <label for="input-checkbox" class="burger__button">
+               <span class="burger__icon"></span>
+            </label>
+         </div>
          <ul class="menu-list">
-            <div class="burger burger__switcher">
-               <input type="checkbox" id="input-checkbox" class="burger__input">
-               <label for="input-checkbox" class="burger__button">
-                  <span class="burger__icon"></span>
-               </label>
-            </div>
             <li class="menu-list__item">
                <a class="menu-list__item-link" 
                   routerLink = "/about" routerLinkActive="active"
