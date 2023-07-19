@@ -38,11 +38,11 @@ a {
          width: 55%;
          max-width: 555px;
 
-         &__list {
+         &-list {
             display: flex;
             justify-content: space-between;
 
-            &-item-link {
+            &__item-link {
                @include link-desktop;
 
                &.active {
