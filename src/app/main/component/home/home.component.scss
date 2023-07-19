@@ -1,6 +1,84 @@
 @import '../../../../typography/typography';
 
-div {
-   height: 90vh;
-   background: url("../../../../assets/songs.png") no-repeat center/cover;
+.home {
+  background: url("../../../../assets/img/home/Header-min.png") no-repeat center/cover;
+  height: 100vh;
+
+  &__inner {
+    position: relative;
+  }
+
+  &__info {
+    max-width: 630px;
+    max-height: 320px;
+    position: absolute;
+    left: 0;
+    top: 340px;
+    align-items: center;
+
+    &-item {
+      @include link-desktop;
+
+      color: #FFE600;
+    }
+
+    &-link {
+      margin-right: 32px;
+      border-bottom: 1px solid #FFE600;
+      transition: all 0.2s linear;
+    }
+
+    &-link:hover {
+      text-shadow: 0 20px 20px rgb(39, 154, 224);
+      border: none;
+    }
+
+    &-title {
+      gap: 8px;
+
+      @include h1-desktop;
+    }
+
+    &-subtitle {
+      @include subtitle-desktop;
+
+      color: #FEFEFE;
+    }
+
+    &-actions {
+      margin-top: 32px;
+      display: flex;
+      column-gap: 16px;
+    }
+
+    &-button {
+      padding: 12px 24px;
+      border: 2px solid #FFE600;
+      border-radius: 100px;
+      background: #FFE600;
+      color: #131313;
+      display: flex;
+      column-gap: 9.5px;
+      transition: all 0.2s linear;
+      cursor: pointer;
+
+      @include button-desktop;
+
+      }
+
+    &-button:hover {
+      box-shadow: 0 15px 20px rgba(39, 154, 224, 50%);
+    }
+
+    &-button:last-child {
+      background: transparent;
+      color: #FFE600;
+      transition: all 0.2s linear;
+    }
+
+    &-button:last-child:hover {
+      box-shadow: 0 15px 20px rgba(39, 154, 224, 50%);
+    }
+  }
 }
+

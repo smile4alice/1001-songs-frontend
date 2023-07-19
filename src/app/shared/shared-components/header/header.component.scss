@@ -52,6 +52,7 @@ a {
 
                &:hover {
                   text-decoration: underline;
+
                }
             }
          }
@@ -113,6 +114,8 @@ a {
                background: var(--text-color-accent);
                border-radius: 100px;
                border: 1px solid transparent;
+               transition: all 0.2s linear;
+
 
                @include button-desktop;
 
@@ -120,6 +123,7 @@ a {
                   background: transparent;
                   border: 1px solid var(--text-color-accent);
                   color: var(--bg-color-accent);
+                  box-shadow: 0 15px 20px rgba(39, 154, 224, 50%);
                }
             }
          }
@@ -127,3 +131,4 @@ a {
    }
 
 }
+
