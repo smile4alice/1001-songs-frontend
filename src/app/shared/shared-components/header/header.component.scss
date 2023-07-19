@@ -17,14 +17,15 @@ a {
    position: fixed;
    top: 0;
    left: 0;
+   z-index: 1;
+   background-color: var(--bg-color-header);
 
    .nav {
       margin: 0 auto;
       padding: 0 80px;
-      width: calc(100vw - 160px);
+      width: 100vw;
       max-width: 1280px;
       height: 108px;
-      background-color: var(--bg-color-header);
       display: flex;
       flex-flow: row nowrap;
       justify-content: space-between;
@@ -218,8 +219,9 @@ a {
 
    .header {
       .nav {
+         margin: 0;
          padding: 0 30px;
-         width: calc(100vw - 60px);
+         width: 100vw;
          justify-content: flex-end;
 
          .logo {
@@ -241,16 +243,16 @@ a {
                margin-top: 10px;
                padding: 20px;
                width: 200px;
-               height: 150px;
+               height: initial;
                flex-direction: column;
                align-items: center;
                background: var(--text-color-secondary);
                position: relative;
-               right: 206px;
+               right: 166px;
                z-index: 2;
 
                &__item {
-                  padding-bottom: 5px;
+                  padding-bottom: 10px;
                }
             }
          }
@@ -269,7 +271,6 @@ a {
    .header {
       .nav {
          padding: 0 32px;
-         width: calc(100vw - 64px);
          height: 96px;
 
          .logo {
@@ -344,7 +345,6 @@ a {
    .header {
       .nav {
          padding: 0 16px;
-         width: calc(100vw - 32px);
          height: 80px;
 
 
@@ -371,7 +371,7 @@ a {
 
             &-list {
                width: 100vw;
-               height: calc(100vh - 45px);
+               height: 100vh;
                padding: 27px 0 20px;
                right: calc(100vw - 49px);
                bottom: 65px;
