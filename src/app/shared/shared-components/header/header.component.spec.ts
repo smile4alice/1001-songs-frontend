@@ -20,24 +20,51 @@ describe('HeaderComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should toggle openSwitcher value when selecting a language', () => {
-    expect(component.openSwitcher).toBeFalse();
+  it('should toggle changeLang variable on each click', () => {
+    expect(component.changeLang).toEqual(true);
 
-    component.selectLang('Укр');
-    expect(component.openSwitcher).toBeTrue();
-
-    component.selectLang('Eng');
-    expect(component.openSwitcher).toBeFalse();
+    component.selectLang();
+    fixture.detectChanges();
+    expect(component.changeLang).toEqual(false);
+ 
+    component.selectLang();
+    fixture.detectChanges();
+    expect(component.changeLang).toEqual(true); 
   });
 
-  it('should filter langslist based on active language when openSwitcher is true', () => {
-    component.openSwitcher = true;
-    component.langslist = [
-      { id: 1, lang: 'Укр', active: true },
-      { id: 2, lang: 'Eng', active: false }
-    ];
+  it('should switch language between "Укр" and "Eng" on each click', () => {
+    expect(component.lang).toEqual('Укр');
 
-    component.selectLang('Eng');
-    expect(component.langslist).toEqual([{ id: 2, lang: 'Eng', active: true }]);
+    component.selectLang();
+    fixture.detectChanges();
+    expect(component.lang).toEqual('Eng');
+ 
+    component.selectLang();
+    fixture.detectChanges();
+    expect(component.lang).toEqual('Укр'); 
+  });
+
+  it('should toggle menuSwitcherOff variable on each click', () => {
+    expect(component.menuSwitcherOff).toEqual(true);
+
+    component.switchMenu();
+    fixture.detectChanges();
+    expect(component.menuSwitcherOff).toEqual(false);
+ 
+    component.switchMenu();
+    fixture.detectChanges();
+    expect(component.menuSwitcherOff).toEqual(true);
+  });
+
+  it('should toggle menuSwitcherOff variable on each click', () => {
+    expect(component.menuSwitcherOff).toEqual(true);
+
+    component.overlayOf();
+    fixture.detectChanges();
+    expect(component.menuSwitcherOff).toEqual(true);
+ 
+    component.overlayOf();
+    fixture.detectChanges();
+    expect(component.menuSwitcherOff).toEqual(true);
   });
 });

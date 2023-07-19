@@ -4,13 +4,36 @@
          <a class="logo__link" routerLink = "" routerLinkActive="active"><img class="logo__link-img" src="./assets/img/header/logo.png" alt="logo"></a>
       </div>
       <div class="menu">
+         <div 
+            [ngClass]="menuSwitcherOff ? 'switcher' : 'overlay'" 
+            (click)="overlayOf()"
+            (keyup.enter)="overlayOf()" 
+            tabindex="0"
+         ></div>
          <div class="burger">
-            <input type="checkbox" id="input-checkbox" class="burger__input">
-            <label for="input-checkbox" class="burger__button">
+            <input 
+               type="checkbox" 
+               id="input-checkbox" 
+               class="burger__input" 
+               [ngClass]="menuSwitcherOff ? 'burger__input' : 'on'"
+            >
+            <label 
+            for="input-checkbox" 
+            class="burger__button" 
+            (click)="switchMenu()"
+            (keyup.enter)="switchMenu()" 
+            tabindex="1"
+            >
                <span class="burger__icon"></span>
             </label>
          </div>
-         <ul class="menu-list">
+         <ul 
+            [ngClass]="menuSwitcherOff ? 'menu-list switcher' : 'menu-list'" 
+               (click)="switchMenu()"
+               (keyup.enter)="switchMenu()" 
+               tabindex="0"
+            >
+            
             <li class="menu-list__item">
                <a class="menu-list__item-link" 
                   routerLink = "/about" routerLinkActive="active"
@@ -47,19 +70,15 @@
             </li>
          </ul>
       </div>
-      <div class="actions">
+      <div class="actions" tabindex="3">
          <div class="actions__search">
             <img src="./assets/img/header/search.svg" class="actions__search-img" alt="search icons">
          </div>
          <div class="actions__lang">
-            <ul [ngClass]="openSwitcher ? 'actions__lang-list actions__lang-list--open' : 'actions__lang-list'">
-               <li *ngFor="let item of langslist; let i=index" 
-                  class="actions__lang-item" 
-                  (click)="selectLang(item.lang)" 
-                  (keyup.enter)="selectLang(item.lang)" tabindex="i"
-               >
+            <ul class="actions__lang-list">
+               <li class="actions__lang-item" (click)="selectLang()" (keyup.space)="selectLang()" tabindex="4">
                   <span>
-                     {{item.lang}}
+                     {{lang}}
                   </span>
                </li>
             </ul>
