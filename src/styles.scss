@@ -3,3 +3,42 @@
 @import '/src/typography/colors';
 @import '/src/typography/fonts';
 @import '/src/typography/typography';
+
+
+/* ----------GENERAL------------ */
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1264px;
+  margin: 0 auto;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
