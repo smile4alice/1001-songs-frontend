@@ -10,20 +10,22 @@ a {
    color: var(--text-color-primary);
 }
 
+
 .header {
    width: 100vw;
    box-sizing: border-box;
    position: fixed;
    top: 0;
    left: 0;
+   z-index: 1;
+   background-color: var(--bg-color-header);
 
    .nav {
       margin: 0 auto;
       padding: 0 80px;
-      width: calc(100vw - 160px);
+      width: 100vw;
       max-width: 1280px;
       height: 108px;
-      background-color: var(--bg-color-header);
       display: flex;
       flex-flow: row nowrap;
       justify-content: space-between;
@@ -38,21 +40,20 @@ a {
          width: 55%;
          max-width: 555px;
 
-         &__list {
+         &-list {
             display: flex;
             justify-content: space-between;
 
-            &-item-link {
+            &__item-link {
                @include link-desktop;
 
                &.active {
-                  text-decoration: underline;
+                  color: rgba(117, 79, 49, 100%);
                   outline: none;
                }
 
                &:hover {
-                  text-decoration: underline;
-
+                  color: rgba(117, 79, 49, 100%);
                }
             }
          }
@@ -67,6 +68,8 @@ a {
          position: relative;
 
          &__search {
+            height: 24px;
+
             &-img {
                width: 24px;
                height: 24px;
@@ -96,6 +99,7 @@ a {
 
                &:hover {
                   cursor: pointer;
+                  background-color: var(--bg-color-header-1);
                }
             }
 
@@ -120,10 +124,7 @@ a {
                @include button-desktop;
 
                &:hover {
-                  background: transparent;
-                  border: 1px solid var(--text-color-accent);
-                  color: var(--bg-color-accent);
-                  box-shadow: 0 15px 20px rgba(39, 154, 224, 50%);
+                  background: rgba(255, 240, 104, 100%);
                }
             }
          }
@@ -132,3 +133,271 @@ a {
 
 }
 
+// Burger icon markup
+
+.burger {
+   display: none;
+   position: relative;
+   z-index: 3;
+
+   &__input {
+      display: none;
+   }
+
+   &__button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 33px;
+      height: 33px;
+      border: 1px solid transparent;
+      border-radius: 50%;
+      cursor: pointer;
+
+      .burger__icon::before,
+      .burger__icon::after,
+      .burger__icon {
+         background: var(--text-color-primary);
+         width: 28px;
+         height: 2px;
+         border-radius: 2px;
+         transition: 0.1s;
+      }
+
+      .burger__icon::before,
+      .burger__icon::after {
+         content: '';
+         position: relative;
+         display: inline-block;
+      }
+
+      .burger__icon::before {
+         top: -20px;
+      }
+
+      .burger__icon::after {
+         top: -23px;
+      }
+   }
+
+   .on+&__button span {
+      background-color: transparent;
+   }
+
+   .on+&__button span::before {
+      top: -13px;
+      transform: rotate(135deg);
+   }
+
+   .on+&__button span::after {
+      top: -32px;
+      transform: rotate(-135deg);
+   }
+
+   .on+&__button {
+      background-color: transparent;
+      border: 1px solid var(--text-color-primary);
+   }
+}
+
+/* Common styles for screens 1023px - 768px wide and smaller */
+
+@media (width <=1023px) {
+   .switcher {
+      display: none !important;
+   }
+
+   .overlay {
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: transparent;
+   }
+
+   .header {
+      .nav {
+         margin: 0;
+         padding: 0 30px;
+         width: 100vw;
+         justify-content: flex-end;
+
+         .logo {
+            order: 1;
+         }
+
+         .menu {
+            order: 3;
+            width: 33px;
+            height: 100%;
+
+            .burger {
+               display: block;
+               margin-top: 35px;
+               margin-left: auto;
+            }
+
+            &-list {
+               margin-top: 10px;
+               padding: 20px;
+               width: 200px;
+               height: initial;
+               flex-direction: column;
+               align-items: center;
+               background: var(--text-color-secondary);
+               position: relative;
+               right: 166px;
+               z-index: 2;
+
+               &__item {
+                  padding-bottom: 10px;
+               }
+            }
+         }
+
+         .actions {
+            order: 2;
+            margin-left: auto;
+            margin-right: 30px;
+         }
+
+      }
+   }
+}
+
+@media (width <=768px) {
+   .header {
+      .nav {
+         padding: 0 32px;
+         height: 96px;
+
+         .logo {
+            width: 68px;
+            height: 64px;
+
+            &__link-img {
+               width: 68px;
+               height: 64px;
+            }
+
+         }
+
+         .actions {
+            width: initial;
+
+            &__lang {
+               display: none;
+            }
+
+            &__donate {
+               &-button {
+                  margin-left: 24px;
+               }
+            }
+         }
+      }
+
+   }
+
+   .burger {
+      &__button {
+         width: 28px;
+         height: 28px;
+         border: 1px solid transparent;
+
+         .burger__icon::before,
+         .burger__icon::after,
+         .burger__icon {
+            width: 24px;
+            height: 1px;
+            border-radius: 1px;
+         }
+
+         .burger__icon::before {
+            top: -20px;
+         }
+
+         .burger__icon::after {
+            top: -26px;
+         }
+      }
+
+
+      .on+&__button span::before {
+         top: -15px;
+      }
+
+      .on+&__button span::after {
+         top: -34px;
+      }
+   }
+}
+
+@media (width <=576px) {
+   .burger {
+      &__input:checked+&__button {
+         border: 1px solid transparent !important;
+      }
+   }
+
+   .header {
+      .nav {
+         padding: 0 16px;
+         height: 80px;
+
+
+         .logo {
+            width: 51px;
+            height: 48px;
+
+            &__link-img {
+               width: 51px;
+               height: 48px;
+            }
+
+         }
+
+         .menu {
+            .burger {
+               margin-top: 25px;
+               position: relative;
+
+               &__input:checked+&__button {
+                  border: 1px solid transparent !important;
+               }
+            }
+
+            &-list {
+               width: 100vw;
+               height: 100vh;
+               padding: 27px 0 20px;
+               right: calc(100vw - 49px);
+               bottom: 65px;
+
+
+               &__item-link {
+                  @include link-mobile;
+
+               }
+            }
+         }
+
+         .actions {
+            margin-right: 10px;
+
+            &__donate {
+               &-button {
+                  margin-left: 10px;
+
+                  @include button-mobile;
+
+               }
+            }
+         }
+      }
+
+   }
+
+}
