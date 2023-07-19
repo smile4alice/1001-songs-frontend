@@ -42,6 +42,10 @@ a {
             display: flex;
             justify-content: space-between;
 
+            .burger__switcher {
+               display: none;
+            }
+
             &__item-link {
                @include link-desktop;
 
@@ -126,4 +130,67 @@ a {
       }
    }
 
+}
+
+// Burger icon markup
+
+.burger {
+   &__input {
+      display: none;
+   }
+
+   &__button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: 2px solid transparent;
+      border-radius: 50%;
+      cursor: pointer;
+
+      .burger__icon::before,
+      .burger__icon::after,
+      .burger__icon {
+         background: var(--text-color-primary);
+         width: 32px;
+         height: 3px;
+         border-radius: 2px;
+         transition: 0.3s;
+      }
+
+      .burger__icon::before,
+      .burger__icon::after {
+         content: '';
+         position: relative;
+         display: inline-block;
+      }
+
+      .burger__icon::before {
+         top: -20px;
+      }
+
+      .burger__icon::after {
+         top: -23px;
+      }
+   }
+
+   &__input:checked+&__button span {
+      background-color: transparent;
+   }
+
+   &__input:checked+&__button span::before {
+      top: -13px;
+      transform: rotate(135deg);
+   }
+
+   &__input:checked+&__button span::after {
+      top: -32px;
+      transform: rotate(-135deg);
+   }
+
+   &__input:checked+&__button {
+      background-color: transparent;
+      border: 2px solid var(--text-color-primary);
+   }
 }
