@@ -9,6 +9,15 @@
       },
       "actions": {
          "button-donate": "Donate"
+      },
+      "pop-up-menu":{
+         "title": "Promoting Authentic Songs from All Over Ukraine",
+         "nav-menu-subtitle": "1000 and 1 Songs",
+         "call-to-action": "Stay Tuned",
+         "ruls":"Terms and Conditions of Use",
+         "privacy-policy":"Privacy Policy",
+         "reporting":"Convergence",
+         "copyrigh":"Copyright © 2023. All rights reserved"
       }
    },
    "footer": {

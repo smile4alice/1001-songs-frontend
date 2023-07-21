@@ -1,6 +1,14 @@
 @import '../../../../../typography/typography';
 @import '../../../../../typography/fonts';
 
+.selected {
+   background: var(--text-color-accent);
+}
+
+.on {
+   display: none !important;
+}
+
 .wrapper {
    padding: 0 48px 30px;
    width: 100vw;
@@ -12,6 +20,7 @@
    z-index: 9999;
 
    &__header {
+      padding-top: 10px;
       height: 80px;
       display: flex;
       justify-content: space-between;
@@ -91,7 +100,7 @@
                &__list li {
                   @include h2-mobile($font-size: 24px, $color: rgba(117, 79, 49, 100%));
 
-                  &.active {
+                  .active {
                      color: var(--text-color-primary);
                      outline: none;
                   }
@@ -151,6 +160,26 @@
       padding-top: 10px;
 
       .main {
+         .lang {
+            display: flex;
+
+            &__item {
+               width: 48px;
+               height: 48px;
+               border: 1px solid transparent;
+               border-radius: 50%;
+               text-align: center;
+               margin-right: 20px;
+
+               @include button-desktop($line-height: 48px);
+
+               &:hover {
+                  background-color: var(--text-color-extra-2);
+                  cursor: pointer;
+               }
+            }
+         }
+
          &__title {
             width: 100%;
          }

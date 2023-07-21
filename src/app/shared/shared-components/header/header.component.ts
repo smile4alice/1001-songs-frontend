@@ -1,15 +1,12 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { PopUpMenuComponent } from './pop-up-menu/pop-up-menu.component';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
-  @ViewChild(PopUpMenuComponent)
-  popUpMenu!: PopUpMenuComponent;
+export class HeaderComponent implements OnInit{
   
   public isPopupOpen = true;
   public changeLang: boolean = true;
@@ -19,7 +16,13 @@ export class HeaderComponent {
 
   constructor(
     private _translate: TranslateService
-  ){}
+  ){
+    this.checkLang()
+  }
+
+  ngOnInit(): void {
+    this.checkLang()
+  }
 
   selectLang(){
     this.changeLang = !this.changeLang;
@@ -35,11 +38,17 @@ export class HeaderComponent {
     this.menuSwitcherOff = true;
   }
   togglePopUp() {
-    this.isPopupOpen = !this.isPopupOpen
+    this.isPopupOpen = !this.isPopupOpen;
   }
 
-  // closePopup() {
-  //   this.isPopupOpen = false
-  // }
+  checkLang(){
+    this.changeLang = this._translate.currentLang === 'en' ? false : true;
+  }
+
+  receivedData(value:boolean){
+    this.changeLang = value ? false : true;
+    this.lang = this.changeLang ? 'Укр' : 'Eng';
+    this._translate.use(this.changeLang ? 'ua' : 'en');
+  }
 
 }
