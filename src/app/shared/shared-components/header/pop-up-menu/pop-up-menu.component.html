@@ -1,0 +1,61 @@
+<!-- <div class="custom-popup">
+   <div class="custom-popup-content">
+    <ng-content></ng-content>
+
+   </div>
+ </div> -->
+
+ <div class="wrapper">
+    <div class="wrapper__header">
+      <img src="./assets/img/header/logo.png" alt="logo" class="header__logo">
+      <ng-content></ng-content>
+    </div>
+    <div class="main">
+      <div class="action">
+        <ul class="lang">
+          <li class="lang__item">Укр</li>
+          <li class="lang__item">Eng</li>
+        </ul>
+      </div>
+      <div class="main__title">
+        <h1>Популяризуємо автентичні пісні з усієї України</h1>
+      </div>
+      <div class="nav">
+        <div class="nav__menu">
+          <div class="menu__span">
+            <span>1000 і 1 пісня</span>
+          </div>
+          <hr>
+          <div class="links">
+            <ul class="links__list">
+              <li class="list__item"><a routerLink = "/about" routerLinkActive="active">Про проєкт</a></li>
+              <li class="list__item"><a routerLink = "/map" routerLinkActive="active">Мапа</a></li>
+              <li class="list__item"><a routerLink = "/science" routerLinkActive="active">Освітній розділ</a></li>
+              <li class="list__item"><a routerLink = "/news" routerLinkActive="active">Новини</a></li>
+              <li class="list__item"><a routerLink = "/expeditions" routerLinkActive="active">Експедиції</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="nav__social">
+          <div class="social__span">
+            <span>Слідкуйте</span>
+          </div>
+          <hr>
+          <div class="sotial__network">
+            <ul class="networks">
+              <li class="networks__item"><img src="./assets/img/header/social-facebook.png" alt=""></li>
+              <li class="networks__item"><img src="./assets/img/header/social-youtube.png" alt=""></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <ul class="footer__list">
+        <li class="footer__item"><a href="">Звітність</a></li>
+        <li class="footer__item"><a href="">Політика приватності</a></li>
+        <li class="footer__item"><a href="">Правила та умови використання</a></li>
+      </ul>
+      <span class="footer__item--copiright">Copyright © 2023. All rights reserved</span>
+    </div>
+ </div>

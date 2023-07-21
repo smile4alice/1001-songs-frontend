@@ -6,13 +6,15 @@ import { AdminComponent } from './shared-components/admin/admin.component';
 import { UserComponent } from './shared-components/user/user.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { PopUpMenuComponent } from './shared-components/header/pop-up-menu/pop-up-menu.component';
 
 @NgModule({
    declarations: [
       HeaderComponent,
       FooterComponent,
       AdminComponent,
-      UserComponent
+      UserComponent,
+      PopUpMenuComponent
    ],
    imports:[
       CommonModule,

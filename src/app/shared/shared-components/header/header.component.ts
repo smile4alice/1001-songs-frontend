@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { PopUpMenuComponent } from './pop-up-menu/pop-up-menu.component';
 
 @Component({
   selector: 'app-header',
@@ -7,6 +8,10 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  @ViewChild(PopUpMenuComponent)
+  popUpMenu!: PopUpMenuComponent;
+  
+  public isPopupOpen = true;
   public changeLang: boolean = true;
   public menuSwitcherOff: boolean = true;
 
@@ -29,4 +34,12 @@ export class HeaderComponent {
   overlayOf():void {
     this.menuSwitcherOff = true;
   }
+  togglePopUp() {
+    this.isPopupOpen = !this.isPopupOpen
+  }
+
+  // closePopup() {
+  //   this.isPopupOpen = false
+  // }
+
 }
