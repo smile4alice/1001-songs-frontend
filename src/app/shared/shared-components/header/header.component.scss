@@ -130,82 +130,11 @@ a {
 
 }
 
-// Burger icon markup
-
-.burger {
-   display: none;
-   position: relative;
-   z-index: 3;
-
-   &__input {
-      display: none;
-   }
-
-   &__button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      cursor: pointer;
-
-      .burger__icon::before,
-      .burger__icon::after,
-      .burger__icon {
-         background: var(--text-color-primary);
-         width: 24px;
-         height: 3px;
-         border-radius: 1px;
-         transition: 0.1s;
-      }
-
-      .burger__icon::before,
-      .burger__icon::after {
-         content: '';
-         position: relative;
-         display: inline-block;
-      }
-
-      .burger__icon::before {
-         top: -20px;
-      }
-
-      .burger__icon::after {
-         top: -23px;
-      }
-   }
-
-   .on+&__button span {
-      background-color: transparent;
-   }
-
-   .on+&__button span::before {
-      top: -13px;
-      transform: rotate(135deg);
-   }
-
-   .on+&__button span::after {
-      top: -32px;
-      transform: rotate(-135deg);
-   }
-}
-
 /* Common styles for screens 1023px - 768px wide and smaller */
 
 @media (width <=1024px) {
    .switcher {
       display: none !important;
-   }
-
-   .overlay {
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: transparent;
    }
 
    .header {
@@ -226,28 +155,22 @@ a {
             width: 24px;
             height: 100%;
 
-            .burger {
-               display: block;
-               margin-top: 43px;
-               margin-left: auto;
-            }
+            // &-list {
+            //    margin-top: 10px;
+            //    padding: 20px;
+            //    width: 200px;
+            //    height: initial;
+            //    flex-direction: column;
+            //    align-items: center;
+            //    background: var(--text-color-secondary);
+            //    position: relative;
+            //    right: 166px;
+            //    z-index: 2;
 
-            &-list {
-               margin-top: 10px;
-               padding: 20px;
-               width: 200px;
-               height: initial;
-               flex-direction: column;
-               align-items: center;
-               background: var(--text-color-secondary);
-               position: relative;
-               right: 166px;
-               z-index: 2;
-
-               &__item {
-                  padding-bottom: 10px;
-               }
-            }
+            //    &__item {
+            //       padding-bottom: 10px;
+            //    }
+            // }
          }
 
          .actions {
@@ -278,13 +201,6 @@ a {
 
          }
 
-         .menu {
-            .burger {
-               margin-top: 36px;
-            }
-
-         }
-
          .actions {
             margin-right: 28px;
             width: 29%;
@@ -306,16 +222,6 @@ a {
 }
 
 @media (width <=421px) {
-   .burger {
-      .on+&__button span::before {
-         top: -14px !important;
-      }
-
-      .on+&__button span::after {
-         top: -33px !important;
-      }
-   }
-
    .header {
       .nav {
          padding: 0 16px;
@@ -331,45 +237,20 @@ a {
             }
          }
 
-         .menu {
-            .burger {
-               margin-top: 34px;
+         // .menu {
+         //    &-list {
+         //       width: 100vw;
+         //       height: 100vh;
+         //       padding: 27px 0 20px;
+         //       right: calc(100vw - 49px);
+         //       bottom: 65px;
 
-               &__button {
-                  width: 18px;
-                  height: 12px;
+         //       &__item-link {
+         //          @include link-mobile;
 
-                  .burger__icon::before,
-                  .burger__icon::after,
-                  .burger__icon {
-                     width: 18px;
-                     height: 2px;
-
-                  }
-
-                  .burger__icon::before {
-                     top: -18px;
-                  }
-
-                  .burger__icon::after {
-                     top: -27px;
-                  }
-               }
-            }
-
-            &-list {
-               width: 100vw;
-               height: 100vh;
-               padding: 27px 0 20px;
-               right: calc(100vw - 49px);
-               bottom: 65px;
-
-               &__item-link {
-                  @include link-mobile;
-
-               }
-            }
-         }
+         //       }
+         //    }
+         // }
 
          .actions {
             margin-right: 16px;
