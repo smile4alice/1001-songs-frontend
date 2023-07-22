@@ -1,5 +1,5 @@
-<!--<div style="display: flex; justify-content: center; align-items: center;"> -->
-<!--   <p style="padding: 10px; color: azure; font-size: larger; background-color: #1a1a1a;">{{ 'home.stub' | translate }}</p>-->
+<!--<div> -->
+<!--   <p>{{ 'home.stub' | translate }}</p>-->
 <!--</div>-->
 <section class="home">
   <div class="container">
@@ -14,11 +14,12 @@
           </ul>
         </div>
         <div class="home__info-desc">
-          <h1 class="home__info-title">1000 і 1 пісня</h1>
-          <p class="home__info-subtitle">У нас зібрані українські автентичні пісні з усіх регіонів та різних жанрів. Популяризуймо Україну разом</p>
+          <h1 class="home__info-title">1000 і 1 пісня</h1>;
+          <p class="home__info-subtitle">У нас зібрані українські автентичні пісні з усіх регіонів та різних жанрів. Популяризуймо Україну разом
+          <img class="home__info-img" [src]="HomepageFlag.flagIcon" alt="flag of Ukraine"></p>
         </div>
         <div class="home__info-actions">
-          <a class="home__info-button"><img [src]="HomepageDonate.donateIcon" alt="img-donate">Підтримати проєкт</a>
+          <a class="home__info-button"><img [src]="HomepageDonate.donateIcon" alt="img-donate">Підтримати проект</a>
           <a class="home__info-button"><img [src]="HomepageShare.shareIcon" alt="img-share">Поділитись сайтом</a>
         </div>
       </div>
