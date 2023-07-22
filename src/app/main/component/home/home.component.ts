@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import {Homepage} from "../../../core/constants/constants";
+import {Homepage} from "../../../shared/constants/constants";
+
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,11 @@ import {Homepage} from "../../../core/constants/constants";
 export class HomeComponent {
   protected readonly HomepageShare = Homepage;
   protected readonly HomepageDonate = Homepage;
-  constructor(private _translate: TranslateService){}
+  protected readonly HomepageFlag = Homepage;
+
+  constructor(
+    private _translate: TranslateService){}
+
 
 
 }
