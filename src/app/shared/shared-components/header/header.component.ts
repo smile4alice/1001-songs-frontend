@@ -8,7 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HeaderComponent implements OnInit{
   
-  public isPopupOpen = true;
+  public isPopupOpen = false;
   public changeLang: boolean = true;
   public menuSwitcherOff: boolean = true;
 
@@ -16,9 +16,7 @@ export class HeaderComponent implements OnInit{
 
   constructor(
     private _translate: TranslateService
-  ){
-    this.checkLang()
-  }
+  ){}
 
   ngOnInit(): void {
     this.checkLang()
@@ -30,13 +28,13 @@ export class HeaderComponent implements OnInit{
     this._translate.use(this.changeLang ? 'ua' : 'en');
   }
 
-  switchMenu():void {
-    this.menuSwitcherOff = !this.menuSwitcherOff;
-  }
+  // switchMenu():void {
+  //   this.menuSwitcherOff = !this.menuSwitcherOff;
+  // }
 
-  overlayOf():void {
-    this.menuSwitcherOff = true;
-  }
+  // overlayOf():void {
+  //   this.menuSwitcherOff = true;
+  // }
   togglePopUp() {
     this.isPopupOpen = !this.isPopupOpen;
   }
