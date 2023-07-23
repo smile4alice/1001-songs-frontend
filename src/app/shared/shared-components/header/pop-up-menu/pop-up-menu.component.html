@@ -1,0 +1,54 @@
+<div class="wrapper">
+    <div class="wrapper__header">
+      <img src="./assets/img/header/logo.png" alt="logo" class="header__logo">
+      <ng-content></ng-content>
+    </div>
+    <div class="main">
+      <div class="action">
+        <ul class="lang">
+          <li class="lang__item" [ngClass]="{'selected': !lang}" (click)="selectLang(true)" (keypress)="selectLang(true)" tabindex="12">Укр</li>
+          <li class="lang__item" [ngClass]="{'selected': lang}" (click)="selectLang(false)" (keydown)="selectLang(false)" tabindex="13">Eng</li>
+        </ul>
+      </div>
+      <div class="main__title">
+        <h1>{{'header.pop-up-menu.title' | translate}}</h1>
+      </div>
+      <div class="nav">
+        <div class="nav__menu">
+          <div class="menu__span">
+            <span>{{'header.pop-up-menu.nav-menu-subtitle' | translate}}</span>
+          </div>
+          <hr>
+          <div class="links">
+            <ul class="links__list">
+              <li class="list__item"><a routerLink = "/about" routerLinkActive="active">{{'header.nav-menu.about' | translate}}</a></li>
+              <li class="list__item"><a routerLink = "/map" routerLinkActive="active">{{'header.nav-menu.map' | translate}}</a></li>
+              <li class="list__item"><a routerLink = "/science" routerLinkActive="active">{{'header.nav-menu.educational-section' | translate}}</a></li>
+              <li class="list__item"><a routerLink = "/news" routerLinkActive="active">{{'header.nav-menu.news' | translate}}</a></li>
+              <li class="list__item"><a routerLink = "/expeditions" routerLinkActive="active">{{'header.nav-menu.expedition' | translate}}</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="nav__social">
+          <div class="social__span">
+            <span>{{'header.pop-up-menu.call-to-action' | translate}}</span>
+          </div>
+          <hr>
+          <div class="sotial__network">
+            <ul class="networks">
+              <li class="networks__item"><img src="./assets/img/header/social-facebook.png" alt="facebook"></li>
+              <li class="networks__item"><img src="./assets/img/header/social-youtube.png" alt="youtube"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <ul class="footer__list">
+        <li class="footer__item"><a href="#">{{'header.pop-up-menu.ruls' | translate}}</a></li>
+        <li class="footer__item"><a href="#">{{'header.pop-up-menu.privacy-policy' | translate}}</a></li>
+        <li class="footer__item"><a href="#">{{'header.pop-up-menu.reporting' | translate}}</a></li>
+      </ul>
+      <span class="footer__item--copiright">{{'header.pop-up-menu.copyrigh' | translate}}</span>
+    </div>
+ </div>

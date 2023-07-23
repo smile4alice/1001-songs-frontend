@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -6,7 +6,9 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
+  
+  public isPopupOpen = false;
   public changeLang: boolean = true;
   public menuSwitcherOff: boolean = true;
 
@@ -16,17 +18,28 @@ export class HeaderComponent {
     private _translate: TranslateService
   ){}
 
+  ngOnInit(): void {
+    this.checkLang()
+  }
+
   selectLang(){
     this.changeLang = !this.changeLang;
     this.lang = this.changeLang ? 'Укр' : 'Eng';
     this._translate.use(this.changeLang ? 'ua' : 'en');
   }
 
-  switchMenu():void {
-    this.menuSwitcherOff = !this.menuSwitcherOff;
+  togglePopUp() {
+    this.isPopupOpen = !this.isPopupOpen;
   }
 
-  overlayOf():void {
-    this.menuSwitcherOff = true;
+  checkLang(){
+    this.changeLang = this._translate.currentLang === 'en' ? false : true;
   }
+
+  receivedData(value:boolean){
+    this.changeLang = value ? false : true;
+    this.lang = this.changeLang ? 'Укр' : 'Eng';
+    this._translate.use(this.changeLang ? 'ua' : 'en');
+  }
+
 }

@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HeaderComponent } from './header.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { PopUpMenuComponent } from './pop-up-menu/pop-up-menu.component';
+
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -8,7 +10,7 @@ describe('HeaderComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [HeaderComponent],
+      declarations: [HeaderComponent, PopUpMenuComponent],
       imports: [TranslateModule.forRoot()]
     });
     fixture = TestBed.createComponent(HeaderComponent);
@@ -44,27 +46,9 @@ describe('HeaderComponent', () => {
     expect(component.lang).toEqual('Укр'); 
   });
 
-  it('should toggle menuSwitcherOff variable on each click', () => {
-    expect(component.menuSwitcherOff).toEqual(true);
-
-    component.switchMenu();
-    fixture.detectChanges();
-    expect(component.menuSwitcherOff).toEqual(false);
- 
-    component.switchMenu();
-    fixture.detectChanges();
-    expect(component.menuSwitcherOff).toEqual(true);
-  });
-
-  it('should toggle menuSwitcherOff variable on each click', () => {
-    expect(component.menuSwitcherOff).toEqual(true);
-
-    component.overlayOf();
-    fixture.detectChanges();
-    expect(component.menuSwitcherOff).toEqual(true);
- 
-    component.overlayOf();
-    fixture.detectChanges();
-    expect(component.menuSwitcherOff).toEqual(true);
+  it('should isPopupOpen = true', () => {
+    expect(component.isPopupOpen ).toEqual(false);
+    component.togglePopUp();
+    expect(component.isPopupOpen ).toEqual(true);
   });
 });

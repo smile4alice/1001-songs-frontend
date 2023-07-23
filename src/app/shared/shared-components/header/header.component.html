@@ -5,34 +5,14 @@
       </div>
       <div class="menu">
          <div 
-            [ngClass]="menuSwitcherOff ? 'switcher' : 'overlay'" 
-            (click)="overlayOf()"
-            (keyup.enter)="overlayOf()" 
-            tabindex="0"
-         ></div>
-         <div class="burger">
-            <input 
-               type="checkbox" 
-               id="input-checkbox" 
-               class="burger__input" 
-               [ngClass]="menuSwitcherOff ? 'burger__input' : 'on'"
-            >
-            <label 
-            for="input-checkbox" 
-            class="burger__button" 
-            (click)="switchMenu()"
-            (keyup.enter)="switchMenu()" 
-            tabindex="1"
-            >
-               <span class="burger__icon"></span>
-            </label>
+            class="burger"  
+            (click)="togglePopUp()"
+            (keypress)="togglePopUp()"
+            tabindex="2"
+         >
+            <img src="./assets/img/header/burger-icon.svg" alt="Burger menu icon" class="burger__icon">
          </div>
-         <ul 
-            [ngClass]="menuSwitcherOff ? 'menu-list switcher' : 'menu-list'" 
-               (click)="switchMenu()"
-               (keyup.enter)="switchMenu()" 
-               tabindex="0"
-            >
+         <ul [ngClass]="menuSwitcherOff ? 'menu-list switcher' : 'menu-list'" tabindex="0" >
             
             <li class="menu-list__item">
                <a class="menu-list__item-link" 
@@ -65,7 +45,7 @@
                </a>
             </li>
             <li class="menu-list__item">
-               <a class="menu-list__item-link" routerLink = "/expeditions" routerLinkActive="active">{{ 'header.nav-menu.expedition' | translate }}
+               <a class="menu-list__item-link" routerLink="/expeditions" routerLinkActive="active">{{ 'header.nav-menu.expedition' | translate }}
                </a>
             </li>
          </ul>
@@ -88,4 +68,9 @@
          </div>
       </div>
    </nav>
+   <app-pop-up-menu *ngIf="isPopupOpen" (changeLangDetection)="receivedData($event)">
+      <div class="icon" (click)="togglePopUp()" (keypress)="togglePopUp()" tabindex="6">
+         <img class="icon__close" alt="close icon" src="./assets/img/header/close-icon.svg">
+      </div>
+   </app-pop-up-menu>
 </header>

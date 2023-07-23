@@ -10,6 +10,10 @@ a {
    color: var(--text-color-primary);
 }
 
+.icon:hover {
+   cursor: pointer;
+}
+
 
 .header {
    width: 100vw;
@@ -22,8 +26,7 @@ a {
 
    .nav {
       margin: 0 auto;
-      padding: 0 80px;
-      width: 100vw;
+      width: calc(100vw - 160px);
       max-width: 1280px;
       height: 108px;
       display: flex;
@@ -37,6 +40,8 @@ a {
       }
 
       .menu {
+         margin-right: auto;
+         margin-left: 32px;
          width: 55%;
          max-width: 555px;
 
@@ -60,7 +65,8 @@ a {
       }
 
       .actions {
-         width: 270px;
+         width: 22%;
+         min-width: 250px;
          display: flex;
          flex-flow: row nowrap;
          justify-content: space-between;
@@ -81,45 +87,33 @@ a {
          }
 
          &__lang {
-            margin: 0 25px;
-            position: absolute;
-            top: 0;
-            right: 148px;
-
             &-list {
-               width: 46px;
-               height: 46px;
+               margin-left: 12px;
+               width: 48px;
+               height: 48px;
                text-align: center;
-               border: 1px solid #000;
-               border-radius: 98px;
+               border: 1px solid var(--text-color-primary);
+               border-radius: 50%;
+               text-transform: uppercase;
 
                @include button-desktop;
 
-               line-height: 46px;
+               line-height: 47px;
 
                &:hover {
                   cursor: pointer;
-                  background-color: var(--bg-color-header-1);
+                  background-color: var(--text-color-accent);
                }
-            }
-
-            &-list--open {
-               padding-top: 10px;
-               height: 61px;
-               line-height: 25px;
-               border-radius: 100px;
             }
          }
 
          &__donate {
             &-button {
-               width: 148px;
-               height: 46px;
+               width: 150px;
+               height: 48px;
                background: var(--text-color-accent);
                border-radius: 100px;
                border: 1px solid transparent;
-               transition: all 0.2s linear;
-
 
                @include button-desktop;
 
@@ -140,69 +134,14 @@ a {
    position: relative;
    z-index: 3;
 
-   &__input {
-      display: none;
-   }
-
-   &__button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 33px;
-      height: 33px;
-      border: 1px solid transparent;
-      border-radius: 50%;
+   &:hover {
       cursor: pointer;
-
-      .burger__icon::before,
-      .burger__icon::after,
-      .burger__icon {
-         background: var(--text-color-primary);
-         width: 28px;
-         height: 2px;
-         border-radius: 2px;
-         transition: 0.1s;
-      }
-
-      .burger__icon::before,
-      .burger__icon::after {
-         content: '';
-         position: relative;
-         display: inline-block;
-      }
-
-      .burger__icon::before {
-         top: -20px;
-      }
-
-      .burger__icon::after {
-         top: -23px;
-      }
-   }
-
-   .on+&__button span {
-      background-color: transparent;
-   }
-
-   .on+&__button span::before {
-      top: -13px;
-      transform: rotate(135deg);
-   }
-
-   .on+&__button span::after {
-      top: -32px;
-      transform: rotate(-135deg);
-   }
-
-   .on+&__button {
-      background-color: transparent;
-      border: 1px solid var(--text-color-primary);
    }
 }
 
 /* Common styles for screens 1023px - 768px wide and smaller */
 
-@media (width <=1023px) {
+@media (width <=1024px) {
    .switcher {
       display: none !important;
    }
@@ -220,7 +159,7 @@ a {
    .header {
       .nav {
          margin: 0;
-         padding: 0 30px;
+         padding: 0 60px 0 48px;
          width: 100vw;
          justify-content: flex-end;
 
@@ -230,12 +169,14 @@ a {
 
          .menu {
             order: 3;
-            width: 33px;
+            margin-right: 0;
+            margin-left: 0;
+            width: 24px;
             height: 100%;
 
             .burger {
                display: block;
-               margin-top: 35px;
+               margin-top: 43px;
                margin-left: auto;
             }
 
@@ -260,7 +201,8 @@ a {
          .actions {
             order: 2;
             margin-left: auto;
-            margin-right: 30px;
+            margin-right: 36px;
+            width: 282px;
          }
 
       }
@@ -270,7 +212,7 @@ a {
 @media (width <=768px) {
    .header {
       .nav {
-         padding: 0 32px;
+         padding: 0 44px 0 32px;
          height: 96px;
 
          .logo {
@@ -284,8 +226,17 @@ a {
 
          }
 
+         .menu {
+            .burger {
+               margin-top: 39px;
+            }
+
+         }
+
          .actions {
-            width: initial;
+            margin-right: 28px;
+            width: 29%;
+            min-width: 198px;
 
             &__lang {
                display: none;
@@ -300,53 +251,13 @@ a {
       }
 
    }
-
-   .burger {
-      &__button {
-         width: 28px;
-         height: 28px;
-         border: 1px solid transparent;
-
-         .burger__icon::before,
-         .burger__icon::after,
-         .burger__icon {
-            width: 24px;
-            height: 1px;
-            border-radius: 1px;
-         }
-
-         .burger__icon::before {
-            top: -20px;
-         }
-
-         .burger__icon::after {
-            top: -26px;
-         }
-      }
-
-
-      .on+&__button span::before {
-         top: -15px;
-      }
-
-      .on+&__button span::after {
-         top: -34px;
-      }
-   }
 }
 
-@media (width <=576px) {
-   .burger {
-      &__input:checked+&__button {
-         border: 1px solid transparent !important;
-      }
-   }
-
+@media (width <=421px) {
    .header {
       .nav {
          padding: 0 16px;
          height: 80px;
-
 
          .logo {
             width: 51px;
@@ -356,17 +267,11 @@ a {
                width: 51px;
                height: 48px;
             }
-
          }
 
          .menu {
             .burger {
-               margin-top: 25px;
-               position: relative;
-
-               &__input:checked+&__button {
-                  border: 1px solid transparent !important;
-               }
+               margin-top: 34px;
             }
 
             &-list {
@@ -376,7 +281,6 @@ a {
                right: calc(100vw - 49px);
                bottom: 65px;
 
-
                &__item-link {
                   @include link-mobile;
 
@@ -385,7 +289,8 @@ a {
          }
 
          .actions {
-            margin-right: 10px;
+            margin-right: 16px;
+            min-width: 185px;
 
             &__donate {
                &-button {
