@@ -47,8 +47,7 @@ describe('HeaderComponent', () => {
   });
 
   it('should isPopupOpen = true', () => {
-    expect(component.isPopupOpen ).toEqual(true);
-    component.togglePopUp();
+    expect(component.isPopupOpen ).toEqual(false);
     component.togglePopUp();
     expect(component.isPopupOpen ).toEqual(true);
   });

@@ -55,7 +55,7 @@
             @include button-desktop($line-height: 48px);
 
             &:hover {
-               background-color: var(--text-color-extra-2);
+               background-color: var(--text-color-accent);
                cursor: pointer;
             }
          }

@@ -28,13 +28,6 @@ export class HeaderComponent implements OnInit{
     this._translate.use(this.changeLang ? 'ua' : 'en');
   }
 
-  // switchMenu():void {
-  //   this.menuSwitcherOff = !this.menuSwitcherOff;
-  // }
-
-  // overlayOf():void {
-  //   this.menuSwitcherOff = true;
-  // }
   togglePopUp() {
     this.isPopupOpen = !this.isPopupOpen;
   }
