@@ -9,13 +9,22 @@
       },
       "actions": {
          "button-donate":"Підтримати"
+      },
+      "pop-up-menu":{
+         "title": "Популяризуємо автентичні пісні з усієї України",
+         "nav-menu-subtitle": "1000 і 1 пісня",
+         "call-to-action": "Слідкуйте",
+         "ruls":"Правила та умови використання",
+         "privacy-policy":"Політика приватності",
+         "reporting":"Зітність",
+         "copyrigh":"Copyright © 2023. All rights reserved"
       }
    },
    "footer": {
       "stub": "Блок Футер у розробці"
    },
-   "home": {
-      "stub": "Головна сторінка у розробці"
+  "home": {
+     "stub": "Головна сторінка у розробці"
    },
    "about": {
       "stub": "Сторінка 'Про проект' у розробці"

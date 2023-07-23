@@ -9,9 +9,8 @@ describe('ScienceComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ScienceComponent],
-      imports: [TranslateModule.forRoot()]
-    });
+    imports: [TranslateModule.forRoot(), ScienceComponent]
+});
     fixture = TestBed.createComponent(ScienceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

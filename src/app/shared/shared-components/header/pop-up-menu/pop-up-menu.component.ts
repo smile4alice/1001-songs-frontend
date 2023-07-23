@@ -1,10 +1,14 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { NgClass } from '@angular/common';
 
 @Component({
-  selector: 'app-pop-up-menu',
-  templateUrl: './pop-up-menu.component.html',
-  styleUrls: ['./pop-up-menu.component.scss']
+    selector: 'app-pop-up-menu',
+    templateUrl: './pop-up-menu.component.html',
+    styleUrls: ['./pop-up-menu.component.scss'],
+    standalone: true,
+    imports: [NgClass, RouterLink, RouterLinkActive, TranslateModule]
 })
 export class PopUpMenuComponent implements OnInit{
   @Output() changeLangDetection = new EventEmitter<boolean>();

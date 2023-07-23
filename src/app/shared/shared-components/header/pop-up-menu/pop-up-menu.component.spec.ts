@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TranslateModule, TranslateService, TranslateStore } from '@ngx-translate/core';
 import { PopUpMenuComponent } from './pop-up-menu.component';
+import { ActivatedRoute } from '@angular/router';
 
 describe('PopUpMenuComponent', () => {
   let component: PopUpMenuComponent;
@@ -8,10 +9,16 @@ describe('PopUpMenuComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [PopUpMenuComponent],
-      imports: [TranslateModule.forChild()],
-      providers: [TranslateService, TranslateStore]
-    });
+    imports: [TranslateModule.forChild(), PopUpMenuComponent],
+    providers: [TranslateService, TranslateStore,{
+      provide: ActivatedRoute,
+      useValue: {
+        snapshot: {
+          data: {}
+        }
+      }
+    }]
+});
     fixture = TestBed.createComponent(PopUpMenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

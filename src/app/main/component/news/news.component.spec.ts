@@ -9,9 +9,8 @@ describe('NewsComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [NewsComponent],
-      imports: [TranslateModule.forRoot()]
-    });
+    imports: [TranslateModule.forRoot(), NewsComponent]
+});
     fixture = TestBed.createComponent(NewsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -9,9 +9,8 @@ describe('MapComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [MapComponent],
-      imports: [TranslateModule.forRoot()]
-    });
+    imports: [TranslateModule.forRoot(), MapComponent]
+});
     fixture = TestBed.createComponent(MapComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
