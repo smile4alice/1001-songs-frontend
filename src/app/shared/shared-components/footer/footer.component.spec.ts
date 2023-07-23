@@ -8,9 +8,8 @@ describe('FooterComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [FooterComponent],
-      imports:[TranslateModule.forRoot()]
-    });
+    imports: [TranslateModule.forRoot(), FooterComponent]
+});
     fixture = TestBed.createComponent(FooterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

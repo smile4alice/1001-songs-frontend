@@ -9,9 +9,8 @@ describe('ExpeditionsComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ExpeditionsComponent],
-      imports: [TranslateModule.forRoot()]
-    });
+    imports: [TranslateModule.forRoot(), ExpeditionsComponent]
+});
     fixture = TestBed.createComponent(ExpeditionsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
