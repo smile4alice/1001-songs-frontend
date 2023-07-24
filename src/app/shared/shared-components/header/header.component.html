@@ -14,38 +14,11 @@
          </div>
          <ul [ngClass]="menuSwitcherOff ? 'menu-list switcher' : 'menu-list'" tabindex="0" >
             
-            <li class="menu-list__item">
+            <li class="menu-list__item" *ngFor="let link of navLinks">
                <a class="menu-list__item-link" 
-                  routerLink = "/about" routerLinkActive="active"
+                  [routerLink] = "link.route" routerLinkActive="active"
                   >
-                  {{ 'header.nav-menu.about' | translate }}
-               </a>
-            </li>
-            <li class="menu-list__item">
-               <a class="menu-list__item-link" 
-                  routerLink = "/map" 
-                  routerLinkActive="active"
-               >
-                  {{ 'header.nav-menu.map' | translate }}
-               </a>
-            </li>
-            <li class="menu-list__item">
-               <a class="menu-list__item-link" 
-                  routerLink = "/science" routerLinkActive="active"
-               >
-                  {{ 'header.nav-menu.educational-section' | translate }}
-               </a>
-            </li>
-            <li class="menu-list__item">
-               <a class="menu-list__item-link" 
-                  routerLink = "/news" 
-                  routerLinkActive="active"
-               >
-                  {{ 'header.nav-menu.news' | translate }}
-               </a>
-            </li>
-            <li class="menu-list__item">
-               <a class="menu-list__item-link" routerLink="/expeditions" routerLinkActive="active">{{ 'header.nav-menu.expedition' | translate }}
+                  {{ link.name | translate }}
                </a>
             </li>
          </ul>

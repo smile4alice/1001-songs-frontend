@@ -25,6 +25,10 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      .header__link {
+         outline: none;
+      }
    }
 
    .header__logo {
@@ -85,7 +89,7 @@
             padding: 0;
             width: 100%;
             height: 2px;
-            background-color: yellow;
+            background-color: var(--text-color-accent);
             border: none;
          }
 
@@ -98,7 +102,7 @@
 
             .links {
                &__list li {
-                  @include h2-mobile($font-size: 24px, $color: rgba(117, 79, 49, 100%));
+                  @include h2-mobile($font-size: 24px, $color: var(--text-color-active));
 
                   .active {
                      color: var(--text-color-primary);
