@@ -1,6 +1,6 @@
-const path = 'assets/img/home/icons/'
+
 export enum Homepage {
-  donateIcon = `${path}volunteer_activism.svg`,
-  shareIcon = `${path}share.svg`,
-  flagIcon = `${path}Flag_of_Ukraine.svg`
+  donateIcon = 'assets/img/home/icons/volunteer_activism.svg',
+  shareIcon = 'assets/img/home/icons/share.svg',
+  flagIcon = 'assets/img/home/icons/Flag_of_Ukraine.svg'
 }
