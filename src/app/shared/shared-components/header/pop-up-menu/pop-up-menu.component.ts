@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { CommonModule, NgClass } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { navLinksHeader } from 'src/app/shared/enums/navLinks.enum';
 
 @Component({
