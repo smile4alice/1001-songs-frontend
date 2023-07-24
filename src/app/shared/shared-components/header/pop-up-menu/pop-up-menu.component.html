@@ -1,6 +1,8 @@
 <div class="wrapper">
     <div class="wrapper__header">
-      <img src="./assets/img/header/logo.png" alt="logo" class="header__logo">
+      <a class="header__link" routerLink = "" routerLinkActive="active">
+        <img src="./assets/img/header/logo.png" alt="logo" class="header__logo">
+      </a>
       <ng-content></ng-content>
     </div>
     <div class="main">
@@ -21,11 +23,10 @@
           <hr>
           <div class="links">
             <ul class="links__list">
-              <li class="list__item"><a routerLink = "/about" routerLinkActive="active">{{'header.nav-menu.about' | translate}}</a></li>
-              <li class="list__item"><a routerLink = "/map" routerLinkActive="active">{{'header.nav-menu.map' | translate}}</a></li>
-              <li class="list__item"><a routerLink = "/science" routerLinkActive="active">{{'header.nav-menu.educational-section' | translate}}</a></li>
-              <li class="list__item"><a routerLink = "/news" routerLinkActive="active">{{'header.nav-menu.news' | translate}}</a></li>
-              <li class="list__item"><a routerLink = "/expeditions" routerLinkActive="active">{{'header.nav-menu.expedition' | translate}}</a></li>
+              <li *ngFor="let link of navLinks" class="list__item">
+                <a [routerLink] = "link.route" routerLinkActive="active">{{link.name | translate}}
+                </a>
+              </li>
             </ul>
           </div>
         </div>

@@ -3,6 +3,7 @@ import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { PopUpMenuComponent } from './pop-up-menu/pop-up-menu.component';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { navLinksHeader } from '../../enums/navLinks.enum';
 
 @Component({
     selector: 'app-header',
@@ -16,6 +17,7 @@ export class HeaderComponent implements OnInit{
   public isPopupOpen = false;
   public changeLang: boolean = true;
   public menuSwitcherOff: boolean = true;
+  public navLinks = navLinksHeader;
 
   public lang = 'Укр';
 

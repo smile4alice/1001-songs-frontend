@@ -37,6 +37,10 @@ a {
       .logo {
          width: 80px;
          height: 76px;
+
+         &__link {
+            outline: none;
+         }
       }
 
       .menu {
@@ -53,12 +57,12 @@ a {
                @include link-desktop;
 
                &.active {
-                  color: rgba(117, 79, 49, 100%);
+                  color: var(--text-color-active);
                   outline: none;
                }
 
                &:hover {
-                  color: rgba(117, 79, 49, 100%);
+                  color: var(--text-color-active);
                }
             }
          }
@@ -103,6 +107,7 @@ a {
                &:hover {
                   cursor: pointer;
                   background-color: var(--text-color-accent);
+                  border-color: transparent;
                }
             }
          }
@@ -118,7 +123,7 @@ a {
                @include button-desktop;
 
                &:hover {
-                  background: rgba(255, 240, 104, 100%);
+                  background: var(--bg-color-accent);
                }
             }
          }
