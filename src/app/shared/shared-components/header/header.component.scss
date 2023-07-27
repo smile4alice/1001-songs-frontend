@@ -181,7 +181,7 @@ a {
 
             .burger {
                display: block;
-               margin-top: 43px;
+               margin-top: 46px;
                margin-left: auto;
             }
 
@@ -233,7 +233,7 @@ a {
 
          .menu {
             .burger {
-               margin-top: 39px;
+               margin-top: 40px;
             }
 
          }
@@ -276,7 +276,12 @@ a {
 
          .menu {
             .burger {
-               margin-top: 34px;
+               margin-top: 32px;
+               margin-right: 2px;
+
+               img {
+                  width: 19px;
+               }
             }
 
             &-list {

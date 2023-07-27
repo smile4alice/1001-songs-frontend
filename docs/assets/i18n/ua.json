@@ -16,12 +16,17 @@
          "call-to-action": "Слідкуйте",
          "ruls":"Правила та умови використання",
          "privacy-policy":"Політика приватності",
-         "reporting":"Зітність",
-         "copyrigh":"Copyright © 2023. All rights reserved"
+         "reporting":"Зітність"
       }
    },
    "footer": {
-      "stub": "Блок Футер у розробці"
+      "button": "Підтримати проект",
+      "rules": {
+         "reporting":"Звітність",
+         "policy": "Політика приватності",
+         "terms": "Правила та умови використання",
+         "copyright": "Copyright © 2023. All rights reserved"
+      }
    },
   "home": {
     "home-info": {
