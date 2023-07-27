@@ -21,7 +21,13 @@
       }
    },
    "footer": {
-      "stub": "Block Footer in development"
+      "button": "Support the project",
+      "rules": {
+         "reporting":"Reporting",
+         "policy": "Privacy policy",
+         "terms": "Terms and conditions of use",
+         "copyright": "Copyright © 2023. All rights reserved"
+      }
    },
   "home": {
     "home-info": {
