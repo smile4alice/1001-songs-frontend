@@ -17,6 +17,4 @@ export class HomeComponent {
   constructor(
     private _translate: TranslateService){}
 
-
-
 }
