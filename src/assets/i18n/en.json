@@ -55,7 +55,16 @@
    },
    "science":{
       "stub": "Page 'Educational Section' under development"
-   }
+   },
+  "error": {
+    "error-inner": {
+      "title": "404",
+      "text": "Oops! It looks like the page you are looking for is currently unavailable"
+    },
+    "actions": {
+      "block-btn": "To the main page"
+    }
+  }
 }
 
 
