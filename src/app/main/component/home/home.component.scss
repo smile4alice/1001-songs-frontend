@@ -10,10 +10,16 @@
 
   &__info {
     max-width: 630px;
-    max-height: 320px;
+    max-height: 260px;
     position: absolute;
     top: 400px;
     align-items: center;
+    left: 80px;
+
+    &-desc {
+      display: flex;
+      flex-direction: column;
+    }
 
     &-title {
       margin: 0 0 32px;
@@ -23,9 +29,8 @@
     }
 
     &-subtitle {
-      @include subtitle-desktop;
+      @include paragraph-desktop;
 
-      color: #FEFEFE;
     }
 
     &-img {
@@ -41,52 +46,56 @@
 
     &-button {
       padding: 12px 24px;
-      border: 2px solid #FFE600;
       border-radius: 100px;
-      background: #FFE600;
-      color: #131313;
+      background: var(--bg-color-accent);
       display: flex;
       column-gap: 9.5px;
       transition: all 0.2s linear;
       cursor: pointer;
       width: 244px;
+      height: 48px;
       justify-content: center;
+      text-align: center;
+      align-items: center;
 
       @include button-desktop;
 
-    }
+      color: var(--text-color-primary);
 
-    &-button:hover {
-      background-color: #FFF068;
-      color: #131313;
-      border: 2px solid #FFF068;
+      &:hover {
+        background-color: var(--bg-color-yellow);
+      }
 
-    }
+      &:last-child {
+        background: transparent;
+        transition: all 0.2s linear;
+        border: 2px solid var(--text-color-accent);
 
-    &-button:last-child {
-      background: transparent;
-      color: #FFE600;
-      transition: all 0.2s linear;
-    }
+        svg {
+          fill: #FFE600;
+        }
 
-    &-button:last-child:hover {
-      border: 2px solid #FFF068;
-      color: #FFF068;
-      background-color: rgba(254, 254, 254, 10%);
+        &:hover {
+          svg {
+            fill: var(--text-color-yellow);
+          }
+        }
+
+        @include button-desktop;
+
+        color: var(--text-color-accent);
+
+        &:last-child:hover {
+          border: 2px solid var(--bg-color-yellow);
+          color: var(--text-color-yellow);
+          background-color: var(--bg-color-transparent-yellow);
+        }
+      }
     }
   }
-
-  @media (width <=1440px) {
-    .container {
-      padding-left: 80px;
-    }
-  }
+}
 
   @media (width <=1024px) {
-    .container{
-      padding-left: 0;
-    }
-
     .home {
       &__info {
         position: absolute;
@@ -98,11 +107,10 @@
   @media (width <=768px) {
     .home {
       &__info {
-        max-height: 272px;
+        max-height: 220px;
+        inset: 420px 32px 60px;
+        width: auto;
         position: absolute;
-        left: 32px;
-        top: 420px;
-        right: 32px;
 
         &-title {
           margin: 0 0 24px;
@@ -111,56 +119,47 @@
 
         }
 
+        &-subtitle {
+          margin-right: 32px;
+        }
+
         &-actions {
           margin-top: 24px;
+          gap: 8px;
+        }
+
+        &-button {
+          justify-content: center;
         }
       }
     }
   }
 
-  @media (width <=580px) {
-    .home__info {
-      &-actions {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      &-button {
-        width: 100%;
-        justify-content: center;
-      }
-    }
-  }
-
-  @media (width <=390px) {
+  @media (width <=675px) {
     .home {
       &__info {
-        max-height: 312px;
-        width: 358px;
-        position: absolute;
-        left: 16px;
-        right: 16px;
-        top: 344px;
+        top: 390px;
+        bottom: 32px;
+        height: 220px;
+        width: 400px;
 
         &-title {
           margin: 0 0 20px;
 
           @include h1-mobile;
 
-          color: #FEFEFE;
+          color: var(--text-color-secondary);
         }
 
         &-subtitle {
-          @include body-mobile;
+          @include body-desktop;
 
-          color: #FEFEFE;
+          color: var(--text-color-secondary);
         }
 
         &-actions {
-          flex-direction: column;
-          row-gap: 8px;
-          margin: 20px 16px 0;
+          margin-top: 24px;
+          gap: 8px;
         }
 
         &-button {
@@ -170,4 +169,55 @@
       }
     }
   }
-}
+
+  @media (width <=465px) {
+    .home {
+      &__info {
+        &-actions {
+          max-width: 350px;
+        }
+      }
+    }
+  }
+
+  @media (width <=420px) {
+    .home {
+      &__info {
+        max-width: 358px;
+        position: absolute;
+        inset: 344px 16px 48px;
+
+        &-title {
+          margin: 0 0 20px;
+
+          @include h1-mobile;
+
+          color: var(--text-color-secondary);
+        }
+
+        &-subtitle {
+          @include body-desktop;
+
+          color: var(--text-color-secondary);
+        }
+
+        &-actions {
+          flex-direction: column;
+          row-gap: 8px;
+          max-width: 358px;
+
+          &-button {
+            justify-content: center;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @media (width <=389px) {
+    .home__info {
+      width: auto;
+    }
+  }
+
