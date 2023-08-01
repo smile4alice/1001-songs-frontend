@@ -29,7 +29,7 @@ bootstrapApplication(AppComponent, {
                 path: '', component: MainComponent, loadChildren: () => import('./app/main/main.routes').then(rm => rm.MAIN_ROUTES)
             },
             { path: '404', component: ErrorComponent },
-            { path: '**', redirectTo: '/404' }
+            { path: '**', redirectTo: '404' }
             ])
 
     ]

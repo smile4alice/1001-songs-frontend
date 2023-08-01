@@ -55,11 +55,11 @@ footer {
                   margin-bottom: 32px;
 
                   &:hover {
-                     color: var(--text-color-primary);
+                     color: var(--text-color-accent);
                   }
 
                   a.active {
-                     color: var(--text-color-primary);
+                     color: var(--text-color-accent);
                      outline: none;
                   }
                }
