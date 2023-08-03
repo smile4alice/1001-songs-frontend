@@ -30,6 +30,7 @@ jobs:
           DEPLOY_PASSWORD: ${{ secrets.DEPLOY_PASSWORD }}
           DEPLOY_NAME: ${{ secrets.DEPLOY_NAME}}
         run: |
+          git config remote.origin.url https://github.com/baza-trainee/1001-songs-frontend.git
           git config --global user.email "$DEPLOY_EMAIL"
           git config --global user.name "$DEPLOY_NAME"
           ng deploy --no-silent --email="$DEPLOY_EMAIL"
