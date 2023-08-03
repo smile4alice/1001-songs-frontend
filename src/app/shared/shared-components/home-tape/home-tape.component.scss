@@ -3,6 +3,10 @@
 .tapes {
   overflow-x: clip;
 
+  .xxl {
+    display: none;
+  }
+
   &__wrap {
     max-width: 100%;
     position: relative;
@@ -10,11 +14,9 @@
     &-block {
       display: flex;
       overflow: hidden;
-      user-select: none;
-      background-color: #754F31;
+      background-color: var(--bg-color-footer);
       height: 72px;
       position: absolute;
-      z-index: 1;
       left: -1vw;
       width: 104vw;
     }
@@ -32,7 +34,6 @@
 
       @include h3-desktop;
 
-      transition: all 0.1s ease-in-out;
     }
   }
 }
@@ -47,7 +48,53 @@
   }
 }
 
+@media (width <= 1940px) {
+  .xxl {
+    display: flex;
+  }
+
+  .tapes {
+    &__wrap{
+      &-block{
+        width: 130vw;
+      }
+    }
+  }
+}
+
+@media (width <= 1805px) {
+  .xxl {
+    display: flex;
+  }
+
+  .tapes {
+    &__wrap{
+      &-block{
+        width: 150vw;
+      }
+    }
+  }
+}
+
+@media (width <= 1560px) {
+  .xxl {
+    display: flex;
+  }
+
+  .tapes {
+    &__wrap{
+      &-block{
+        width: 170vw;
+      }
+    }
+  }
+}
+
 @media (width <= 1350px) {
+  .xxl {
+    display: none;
+  }
+
   .tapes {
     &__wrap{
       &-block{
@@ -71,13 +118,23 @@
   .tapes {
     &__wrap{
       &-block{
-        width: 160vw;
+        width: 145vw;
       }
     }
   }
 }
 
-@media (width <= 910px) {
+@media (width <= 940px) {
+  .tapes {
+    &__wrap{
+      &-block{
+        width: 175vw;
+      }
+    }
+  }
+}
+
+@media (width <= 790px) {
   .tapes {
     &__wrap{
       &-block{
@@ -87,11 +144,21 @@
   }
 }
 
-@media (width <= 750px) {
+@media (width <= 760px) {
   .tapes {
     &__wrap{
       &-block{
-        width: 240vw;
+        width: 210vw;
+      }
+    }
+  }
+}
+
+@media (width <= 690px) {
+  .tapes {
+    &__wrap{
+      &-block{
+        width: 225vw;
       }
     }
   }
@@ -101,27 +168,7 @@
   .tapes {
     &__wrap{
       &-block{
-        width: 280vw;
-      }
-    }
-  }
-}
-
-@media (width <= 530px) {
-  .tapes {
-    &__wrap{
-      &-block{
-        width: 330vw;
-      }
-    }
-  }
-}
-
-@media (width <= 450px) {
-  .tapes {
-    &__wrap{
-      &-block{
-        width: 400vw;
+        width: 240vw;
         height: 52px;
       }
 
@@ -140,6 +187,66 @@
       &-image {
         height: 36px;
         width: 36px;
+      }
+    }
+  }
+}
+
+@media (width <= 530px) {
+  .tapes {
+    &__wrap{
+      &-block{
+        width: 245vw;
+      }
+    }
+  }
+}
+
+@media (width <= 500px) {
+  .tapes {
+    &__wrap{
+      &-block{
+        width: 280vw;
+      }
+    }
+  }
+}
+
+@media (width <= 450px) {
+  .tapes {
+    &__wrap{
+      &-block{
+        width: 310vw;
+      }
+    }
+  }
+}
+
+@media (width <= 400px) {
+  .tapes {
+    &__wrap{
+      &-block{
+        width: 335vw;
+      }
+    }
+  }
+}
+
+@media (width <= 355px) {
+  .tapes {
+    &__wrap{
+      &-block{
+        width: 360vw;
+      }
+    }
+  }
+}
+
+@media (width <= 330px) {
+  .tapes {
+    &__wrap{
+      &-block{
+        width: 380vw;
       }
     }
   }
