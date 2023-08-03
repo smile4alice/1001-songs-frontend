@@ -28,7 +28,7 @@ jobs:
           npm install
           npm ci
           npm install -g @angular/cli
-
+          ng add angular-cli-ghpages
 
       # - name: Install dependencies
       #   run: npm install
@@ -49,11 +49,11 @@ jobs:
       #   run: npx ng test --watch=false --progress=false --browsers=ChromeHeadless
 
       - name: Deploy
-      #   run: ng deploy
-        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.4.0
-        with:
-          build_configuration: ng deploy
-          base_href: /1001-songs-frontend/
-          deploy_branch: gh-pages
-          angular_dist_build_folder: docs
+        run: ng deploy
+        # uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.4.0
+        # with:
+        #   build_configuration: ng deploy
+        #   base_href: /1001-songs-frontend/
+        #   deploy_branch: gh-pages
+        #   angular_dist_build_folder: docs
 
