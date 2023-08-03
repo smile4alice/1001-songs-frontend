@@ -24,10 +24,11 @@ jobs:
 
       - name: Install dependencies
         run: |
+          npm cache clean --force
           npm install
           npm run build
           npm install -g @angular/cli
-          npm link angular-cli-ghpages
+          npm ci
           ng add angular-cli-ghpages
 
       # - name: Install dependencies
