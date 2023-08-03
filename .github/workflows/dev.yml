@@ -28,6 +28,7 @@ jobs:
           npm install
           npm ci
           npm install -g @angular/cli
+          npm i angular-cli-ghpages
           ng add angular-cli-ghpages
 
       # - name: Install dependencies
