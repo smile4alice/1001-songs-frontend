@@ -27,7 +27,7 @@ jobs:
           npm cache clean --force
           npm install
           npm ci
-          ng add angular-cli-ghpages
+
 
       # - name: Install dependencies
       #   run: npm install
