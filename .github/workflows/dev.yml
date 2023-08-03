@@ -23,13 +23,22 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install
+        run: |
+               cd src
+          npm install
+          npm run build
+          npm install -g @angular/cli
+          npm link angular-cli-ghpages
+          ng add angular-cli-ghpages
 
-      - name: Install Angular CLI
-        run: npm install -g @angular/cli
+      # - name: Install dependencies
+      #   run: npm install
 
-      - name: Install dependencies
-        run: npm ci
+      # - name: Install Angular CLI
+      #   run: npm install -g @angular/cli
+
+      # - name: Install dependencies
+      #   run: npm ci
 
       # - name: TS Lint
       #   run: npm run lint
