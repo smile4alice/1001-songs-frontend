@@ -25,5 +25,8 @@ jobs:
           npm install -g @angular/cli
 
       - name: Deploy
-        run: ng deploy
+        env:
+          DEPLOY_EMAIL: ${{ secrets.DEPLOY_EMAIL }}
+          DEPLOY_PASSWORD: ${{ secrets.DEPLOY_PASSWORD }}
+        run: ng deploy --no-silent --email="$DEPLOY_EMAIL"
 
