@@ -27,6 +27,7 @@ jobs:
           npm cache clean --force
           npm install
           npm ci
+          npm install -g @angular/cli
 
 
       # - name: Install dependencies
