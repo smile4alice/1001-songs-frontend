@@ -48,7 +48,7 @@ jobs:
       #   run: npx ng test --watch=false --progress=false --browsers=ChromeHeadless
 
       - name: Deploy
-        run: ng deploy --base-href=/1001-songs-frontend/ --repo=https://github.com/baza-trainee/ --no-silent
+        run: ng deploy --base-href=/1001-songs-frontend/ --repo=https://github.com/baza-trainee/1001-songs-frontend --no-silent
         # uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.4.0
         # with:
         #   build_configuration: ng deploy
