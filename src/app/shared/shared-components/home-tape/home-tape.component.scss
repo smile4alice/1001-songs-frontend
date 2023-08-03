@@ -1,0 +1,146 @@
+@import '../../../../typography/typography';
+
+.tapes {
+  overflow-x: clip;
+
+  &__wrap {
+    max-width: 100%;
+    position: relative;
+
+    &-block {
+      display: flex;
+      overflow: hidden;
+      user-select: none;
+      background-color: #754F31;
+      height: 72px;
+      position: absolute;
+      z-index: 1;
+      left: -1vw;
+      width: 104vw;
+    }
+
+    &-items {
+      min-width: 100%;
+      display: flex;
+      justify-content: space-around ;
+      align-items: center;
+      animation: scroll 45s linear infinite;
+    }
+
+    &-item {
+      padding: 16px 0;
+
+      @include h3-desktop;
+
+      transition: all 0.1s ease-in-out;
+    }
+  }
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-100%));
+  }
+}
+
+@media (width <= 1350px) {
+  .tapes {
+    &__wrap{
+      &-block{
+        width: 120vw;
+      }
+    }
+  }
+}
+
+@media (width <= 1160px) {
+  .tapes {
+    &__wrap{
+      &-block{
+        width: 140vw;
+      }
+    }
+  }
+}
+
+@media (width <= 1120px) {
+  .tapes {
+    &__wrap{
+      &-block{
+        width: 160vw;
+      }
+    }
+  }
+}
+
+@media (width <= 910px) {
+  .tapes {
+    &__wrap{
+      &-block{
+        width: 190vw;
+      }
+    }
+  }
+}
+
+@media (width <= 750px) {
+  .tapes {
+    &__wrap{
+      &-block{
+        width: 240vw;
+      }
+    }
+  }
+}
+
+@media (width <= 600px) {
+  .tapes {
+    &__wrap{
+      &-block{
+        width: 280vw;
+      }
+    }
+  }
+}
+
+@media (width <= 530px) {
+  .tapes {
+    &__wrap{
+      &-block{
+        width: 330vw;
+      }
+    }
+  }
+}
+
+@media (width <= 450px) {
+  .tapes {
+    &__wrap{
+      &-block{
+        width: 400vw;
+        height: 52px;
+      }
+
+      &-item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 8px 0;
+
+        @include h3-mobile;
+
+        color: var(--text-color-accent);
+      }
+
+      &-image {
+        height: 36px;
+        width: 36px;
+      }
+    }
+  }
+}

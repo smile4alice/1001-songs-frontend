@@ -2,7 +2,7 @@
 
 .home {
   background: url("../../../../assets/img/home/Header-min.png") no-repeat center/cover;
-  height: 100vh;
+  height: 740px;
 
   &__inner {
     position: relative;
@@ -31,6 +31,7 @@
     &-subtitle {
       @include paragraph-desktop;
 
+      font-size: 23px;
     }
 
     &-img {
@@ -60,6 +61,7 @@
 
       @include button-desktop;
 
+      font-size: 18px;
       color: var(--text-color-primary);
 
       &:hover {
@@ -83,6 +85,7 @@
 
         @include button-desktop;
 
+        font-size: 18px;
         color: var(--text-color-accent);
 
         &:last-child:hover {
