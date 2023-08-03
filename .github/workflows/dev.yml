@@ -34,3 +34,10 @@ jobs:
       - name: Unit Tests
         run: npx ng test --watch=false --progress=false --browsers=ChromeHeadless
 
+      - name: Deploy
+        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.4.0
+        with:
+          build_configuration: ng deploy
+          deploy_branch: gh-pages
+          angular_dist_build_folder: docs
+
