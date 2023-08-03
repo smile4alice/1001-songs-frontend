@@ -40,7 +40,7 @@ jobs:
         uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.4.0
         with:
           build_configuration: ng deploy
-          # base_href: /1001-songs-frontend/
+          baseHref: /1001-songs-frontend/
           deploy_branch: gh-pages
           angular_dist_build_folder: docs
 
