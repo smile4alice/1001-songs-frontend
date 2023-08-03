@@ -39,7 +39,7 @@ jobs:
       - name: Deploy
         run: |
           ng build --prod --base-href /1001-songs-frontend/
-          ng deploy --branch=gh-pages
+          ng deploy
         # uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.4.0
         # with:
         #   build_configuration: ng deploy
