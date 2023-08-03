@@ -110,7 +110,10 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "/1001-songs-frontend/"
+          }
         }
       }
     }
