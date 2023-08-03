@@ -23,36 +23,14 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: |
-          npm cache clean --force
-          npm install
-          npm ci
-          npm install -g @angular/cli
+        run: npm ci
 
-      # - name: Install dependencies
-      #   run: npm install
+      - name: TS Lint
+        run: npm run lint
 
-      # - name: Install Angular CLI
-      #   run: npm install -g @angular/cli
+      - name: SCSS Linter
+        run: npm run stylelint
 
-      # - name: Install dependencies
-      #   run: npm ci
-
-      # - name: TS Lint
-      #   run: npm run lint
-
-      # - name: SCSS Linter
-      #   run: npm run stylelint
-
-      # - name: Unit Tests
-      #   run: npx ng test --watch=false --progress=false --browsers=ChromeHeadless
-
-      - name: Deploy
-        run: ng deploy --base-href=/1001-songs-frontend/ --repo=https://github.com/baza-trainee/1001-songs-frontend --no-silent
-        # uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.4.0
-        # with:
-        #   build_configuration: ng deploy
-        #   base_href: /1001-songs-frontend/
-        #   deploy_branch: gh-pages
-        #   angular_dist_build_folder: docs
+      - name: Unit Tests
+        run: npx ng test --watch=false --progress=false --browsers=ChromeHeadless
 
