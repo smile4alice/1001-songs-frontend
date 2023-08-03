@@ -37,7 +37,7 @@ jobs:
       - name: Deploy
         uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.4.0
         with:
-          build_configuration: ng deploy
+          build_configuration: npm run deploy
           deploy_branch: gh-pages
           angular_dist_build_folder: docs
 
