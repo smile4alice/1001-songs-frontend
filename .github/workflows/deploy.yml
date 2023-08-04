@@ -1,11 +1,8 @@
-name: Deploy to GitHub Pages via angular-cli-ghpages
+name: Deploy to GitHub Pages
 
 on:
-  pull_request:
-    types:
-      - closed
-    branches:
-      - dev
+  push:
+    branches: [master, dev]
 
 jobs:
   build-and-deploy:
@@ -26,14 +23,6 @@ jobs:
         npm ci
         npm install
         npm install -g @angular/cli
-
-    - name: Builds 🚀🚀🚀🚀
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        branch: gh-pages
-        folder: docs
 
     - name: Deploy 🚀🚀🚀🚀
       env:
