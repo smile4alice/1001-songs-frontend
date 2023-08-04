@@ -3,6 +3,13 @@
 .home {
   background: url("../../../../assets/img/home/Header-min.png") no-repeat center/cover;
   height: 740px;
+  position: relative;
+
+  &__tape{
+    position: absolute;
+    bottom: 17px;
+    width: 100%
+  }
 
   &__inner {
     position: relative;
