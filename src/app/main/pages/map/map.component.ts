@@ -6,13 +6,15 @@ import { Marker } from 'src/app/shared/interfaces/map-marker';
 import { InteraciveMapComponent } from 'src/app/shared/shared-components/interacive-map/interacive-map.component';
 import { FetchMarkers } from 'src/app/store/map/map.actions';
 import { MapState } from 'src/app/store/map/map.state';
+import {RouterLink, RouterLinkActive} from "@angular/router";
+import {PlayerComponent} from "./player/player.component";
 
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss'],
   standalone: true,
-  imports: [CommonModule, InteraciveMapComponent]
+  imports: [CommonModule, InteraciveMapComponent, RouterLink, RouterLinkActive, PlayerComponent]
 })
 export class MapComponent implements OnInit {
   @Select(MapState.getMarkersList) markers$?: Observable<Marker[]>;
