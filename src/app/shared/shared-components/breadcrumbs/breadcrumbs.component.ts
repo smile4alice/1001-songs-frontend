@@ -38,6 +38,7 @@ export class BreadcrumbsComponent implements OnInit {
     this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe((route: NavigationEnd | unknown) => {
       if (route instanceof NavigationEnd) {
         const path = route.urlAfterRedirects;
+        console.log(path)
         this.setCrumbs(path);
       }
     });
@@ -69,6 +70,7 @@ export class BreadcrumbsComponent implements OnInit {
     const routeKey = Object.entries(this.Links).find((link: string[]) => link[0] === '/' + url);
     return routeKey ? routeKey[1] : url;
   }
+
   getPathFromKey(key: string) {
     const path = Object.entries(this.Links).find((e) => e[1] === key);
     return path ? path[0] : key;
