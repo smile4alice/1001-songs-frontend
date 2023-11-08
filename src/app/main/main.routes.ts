@@ -8,6 +8,7 @@ import { ScienceComponent } from './pages/science/science.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SongMapComponent } from './pages/map/components/song-map/song-map.component';
 import { NewsArticleComponent } from './pages/news/components/news-article/news-article.component';
+import {ExpeditionArticleComponent} from "./pages/expeditions/expedition-article/expedition-article.component";
 import {ScienceCycleComponent} from "./pages/science/components/science-cycle/science-cycle.component";
 
 export const MAIN_ROUTES: Routes = [
@@ -26,6 +27,13 @@ export const MAIN_ROUTES: Routes = [
       { path: ':id', component: NewsArticleComponent }
     ]
   },
+  { path: 'expeditions',
+    children: [
+      { path: '', component: ExpeditionsComponent },
+      { path: ':id', component: ExpeditionArticleComponent }
+    ]
+  },
+  { path: 'science', component: ScienceComponent },
   { path: 'expeditions', component: ExpeditionsComponent },
   {
     path: 'science',

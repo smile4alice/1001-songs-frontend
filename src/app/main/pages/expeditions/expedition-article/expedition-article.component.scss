@@ -1,4 +1,4 @@
-@import '../../../../../../typography/typography';
+@import '../../../../../typography/typography';
 
 .article {
   margin-top: 108px;
@@ -13,21 +13,48 @@
     width: 100%;
   }
 
-  &__img {
-    height: 720px;
-    object-fit: cover;
-    vertical-align: bottom;
+  &__header {
+    max-width: 100%;
+    display: flex;
+    gap: 24px;
+
+    &-text {
+      @include paragraph-desktop($color: $color-primary);
+    }
+
+    &-ua {
+      width: 302px;
+
+    }
   }
 
-  &__path {
-    a, span {
-      @include body-desktop;
+  &__player {
+    &-main {
+      height: 720px;
+      border-radius: 0;
+    }
+
+    &-sub {
+      width: 100%;
+      display: inline-block;
+      height: 476px;
+      border-radius: 0;
+    }
+
+    &-descr {
+      margin-top: 24px;
+      display: flex;
+      justify-content: space-between;
+
+      span {
+        color: var(--text-color-popup-menu);
+      }
     }
   }
 
   &__box {
-    max-width: 954px;
-    padding-left: 109px;
+    max-width: 845px;
+    margin-left: 109px;
   }
 
   &__title {
@@ -36,36 +63,77 @@
     margin-bottom: 32px;
   }
 
+  &__date {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+
   &__text {
     @include paragraph-desktop($color: $color-primary);
 
     display: flex;
     flex-direction: column;
-    gap: 48px;
+    gap: 32px;
+  }
+
+  &__accent {
+    font-weight: 600;
+    position: relative;
+    padding-left: 26px;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background-color: var(--bg-color-accent);
+    }
   }
 
   &__sub {
-    &-img {
-      height: 476px;
-    }
-
     &-title {
-      @include h4-mobile;
-
-      margin-bottom: 32px;
+      @include h4-mobile($font-size: 28px);
     }
+  }
+
+  &__sources {
+    font-size: 16px;
   }
 
   &__about {
     display: flex;
     justify-content: space-between;
+    font-size: 16px;
     gap: 24px;
+    flex-wrap: wrap;
 
     &-title {
       color: var(--text-color-popup-menu);
       font-weight: 400;
       margin: 0;
       padding-bottom: 32px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: 8px;
+
+    &-prev {
+      svg {
+        transform: rotate(180deg);
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+
+    &-prev,
+    &-next {
+      background-color: transparent;
+      border: none;
     }
   }
 
@@ -120,18 +188,26 @@
   }
 
   .article {
-    &__img {
-      height: 524px;
+    &__header {
+      flex-direction: column-reverse;
+
+      &-ua {
+        width: 50%;
+      }
+    }
+
+    &__player {
+      &-main {
+        height: 524px;
+      }
+
+      &-sub {
+        height: 524px;
+      }
     }
 
     &__box {
-      padding: 0;
-    }
-
-    &__sub {
-      &-img {
-        height: 524px;
-      }
+      margin-left: 0;
     }
   }
 }
@@ -142,12 +218,12 @@
   }
 
   .article {
-    &__img {
-      height: 396px;
-    }
+    &__player {
+      &-main {
+        height: 396px;
+      }
 
-    &__sub {
-      &-img {
+      &-sub {
         height: 396px;
       }
     }
@@ -161,6 +237,12 @@
 
   .article {
     margin-top: 96px;
+
+    &__about {
+      &-box {
+        width: 46%;
+      }
+    }
   }
 }
 
@@ -173,12 +255,18 @@
     padding: 32px 0;
     gap: 32px;
 
-    &__img  {
-      height: 200px;
+    &__header {
+      &-ua {
+        width: 100%;
+      }
+
+      &-text {
+        font-size: 16px;
+      }
     }
 
-    &__path {
-      font-size: 14px;
+    &__date {
+      flex-direction: column;
     }
 
     &__title {
@@ -187,14 +275,22 @@
       margin-bottom: 16px;
     }
 
+    &__player {
+      &-main {
+        height: 200px;
+      }
+
+      &-sub {
+        height: 200px;
+      }
+    }
+
     &__text {
       font-size: 16px;
       gap: 16px;
     }
 
     &__about {
-      flex-wrap: wrap;
-
       &-title {
         font-size: 18px;
         line-height: 24px;
@@ -206,12 +302,6 @@
         font-size: 32px;
         line-height: 40px;
         margin-bottom: 16px;
-      }
-    }
-
-    &__sub {
-      &-img {
-        height: 200px;
       }
     }
   }
