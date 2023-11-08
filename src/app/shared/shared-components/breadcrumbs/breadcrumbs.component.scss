@@ -1,46 +1,15 @@
 @import '../../../../typography/typography';
 
-.container {
-  display: flex;
-  min-height: 90vh;
-  margin: 0 auto;
-  max-width: 1440px;
-  margin-top: 148px;
-  margin-bottom: 80px;
-  padding-top: 30px;
-  overflow: hidden;
+.breadcrumbs {
+  &__list {
+    li {
+      display: inline;
+    }
+  }
 }
 
-.science {
-  width: 100%;
-  margin-right: 80px;
-  margin-left: 80px;
-
-  &__title {
-    @include h2-desktop($line-height: 65px);
-
-    margin-bottom: 10px;
-  }
-
-  &__introduction {
-    @include body-desktop;
-
-    text-wrap: wrap;
-    max-width: 628px;
-    padding-top: 5px;
-  }
-
-  &__gallery {
-    display: flex;
-    gap: 20px;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 48px 0;
-  }
-
-  &__recomendations {
-    margin-bottom: 24px;
-  }
+a {
+  cursor: pointer;
 }
 
 @media (width < 1025px) {
