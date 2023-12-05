@@ -9,7 +9,7 @@ import { NgxsModule, Select } from '@ngxs/store';
 import { AppState } from 'src/app/store/app/app.state';
 import { Observable } from 'rxjs';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { DialogComponent } from './dialog/dialog.component';
+import { DonationDialogComponent } from '../donation-dialog/donation-dialog.component';
 
 @Component({
   selector: 'app-header',
@@ -41,10 +41,6 @@ export class HeaderComponent {
     public dialog: MatDialog
   ) {}
 
-  openDialog() {
-    this.dialog.open(DialogComponent, { data: { text: 'Error. Try again later' } });
-  }
-
   selectLang() {
     this.changeLang = !this.changeLang;
     this.lang = this.changeLang ? 'Eng' : 'Укр';
@@ -68,4 +64,9 @@ export class HeaderComponent {
     this.lang = this.changeLang ? 'Eng' : 'Укр';
     this._translate.use(this.changeLang ? 'ua' : 'en');
   }
+
+  openDonationDialog() {
+    this.dialog.open(DonationDialogComponent, { panelClass: 'custom-modalbox' });
+  }
+  
 }
