@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="science">
+    <h2 class="science__title">{{ 'science.title' | translate }}</h2>
+    <p class="science__introduction">
+      {{ 'expeditions.intro' | translate }}
+    </p>
+    <div class="science__gallery">
+      <div class="science__gallery-item" *ngFor="let category of categories">
+        <app-category-link
+          [routerLink]="category.routerLink"
+          [category]="category.title | translate"
+          [imgUrl]="category.url"
+        ></app-category-link>
+      </div>
+    </div>
+    <div class="science__recomendations">
+      <app-recomendation></app-recomendation>
+    </div>
+    <div class="sciecnce__sources">
+      <app-recommended-sources></app-recommended-sources>
+    </div>
+  </div>
+</div>

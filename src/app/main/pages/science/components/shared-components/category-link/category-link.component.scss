@@ -1,0 +1,73 @@
+@import '/src/typography/typography';
+
+$radius: 15px;
+
+.card {
+  display: inline-block;
+  width: 100%;
+  height: 281px;
+  position: relative;
+  border-radius: $radius;
+  overflow: hidden;
+
+  .link {
+    @include link-desktop($font-size: 24px);
+
+    position: absolute;
+    display: inline-flex;
+    justify-content: space-between;
+    text-align: left;
+    align-items: flex-end;
+    bottom: 0;
+    width: 100%;
+    padding: 16px 24px;
+    color: rgb(255, 255, 255);
+    background: linear-gradient(rgba(255, 255, 255, 0%), rgba(0, 0, 0, 80%));
+    border-bottom-left-radius: $radius;
+    border-bottom-right-radius: $radius;
+    cursor: pointer;
+
+    span {
+      width: 20px;
+      height: 24px;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (width < 1025px) {
+  .card {
+    height: 200px;
+
+    .link {
+      height: 100px;
+    }
+  }
+}
+
+
+@media (width < 769px) {
+  .card {
+    height: 200px;
+
+    .link {
+      height: 100px;
+    }
+  }
+}
+
+@media (width < 391px) {
+  .card {
+    height: 200px;
+
+    .link {
+      padding: 16px;
+      height: 100px;
+    }
+  }
+}

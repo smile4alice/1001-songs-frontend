@@ -1,33 +1,129 @@
 {
-   "header": {
-      "nav-menu": {
-         "about": "Про проект",
-         "map": "Мапа",
-         "educational-section": "Освітній розділ",
-         "news": "Новини",
-         "expedition": "Експедиції"
-      },
-      "actions": {
-         "button-donate":"Підтримати"
-      },
-      "pop-up-menu":{
-         "title": "Популяризуємо автентичні пісні з усієї України",
-         "nav-menu-subtitle": "1000 і 1 пісня",
-         "call-to-action": "Слідкуйте",
-         "ruls":"Правила та умови використання",
-         "privacy-policy":"Політика приватності",
-         "reporting":"Зітність"
-      }
-   },
-   "footer": {
-      "button": "Підтримати проект",
-      "rules": {
-         "reporting":"Звітність",
-         "policy": "Політика приватності",
-         "terms": "Правила та умови використання",
-         "copyright": "Copyright © 2023. All rights reserved"
-      }
-   },
+  "filterOptions": {
+    "countries": {
+      "belarus": "Білорусь",
+      "lithuania": "Литва",
+      "moldova": "Молдова",
+      "poland": "Польща",
+      "romania": "Румунія",
+      "slovakia": "Словаччина",
+      "hungary": "Угорщина",
+      "ukraine": "Україна",
+      "russia": "Росія"
+    },
+    "regions": {
+      "ivanoFrankivsk": "Івано-Франківська область",
+      "crimea": "Автономна республіка Крим",
+      "brest": "Берестейська область",
+      "bryansk": "Брянська область",
+      "bilgorod": "Бєлгородська область",
+      "warmian": "Вармінсько-Мазурське воєводство",
+      "greaterPoland": "Великопольське воєводство",
+      "volgograd": "Волгоградська область",
+      "volyn": "Волинська область",
+      "voronizh": "Воронезька область",
+      "vinnytsya": "Вінницька область",
+      "vitebsk": "Вітебська область",
+      "gomel": "Гомельська область",
+      "grodno": "Гродненська область",
+      "dnipro": "Дніпропетровська область",
+      "donetsk": "Донецька область",
+      "zhytomyr": "Житомирська область",
+      "zakarpattia": "Закарпатська область",
+      "zaporizhia": "Запорізька область",
+      "westPomeranian": "Західнопоморське воєводство",
+      "kyiv": "Київська область",
+      "krasnodar": "Краснодарський край",
+      "kurks": "Курська область",
+      "kuyavianPomeranian": "Куявсько-Поморське воєводство",
+      "khirovohrad": "Кіровоградська область",
+      "lodz": "Лодзинське воєводство",
+      "luhansk": "Луганська область",
+      "lviv": "Львівська область",
+      "lublin": "Люблінське воєводство",
+      "lubusk": "Любуське воєводство",
+      "masovian": "Мазовецьке воєводство",
+      "lesserPoland": "Малопольське воєводство",
+      "mykolayiv": "Миколаївська область",
+      "mohyliv": "Могильовська область",
+      "minsk": "Мінська область",
+      "kyivCiity": "Місто Київ",
+      "minskCity": "Місто Мінськ",
+      "sevastopolCiy": "Місто Севастополь",
+      "lowerSilesian": "Нижньосілезьке воєводство",
+      "odesa": "Одеська область",
+      "opole": "Опольське воєводство",
+      "poltava": "Полтавська область",
+      "pomeranian": "Поморське воєводство",
+      "pskov": "Псковська область",
+      "subcarpathian": "Підкарпатське воєводство",
+      "podlaskie": "Підляське воєводство",
+      "rostov": "Ростовська область",
+      "rivne": "Рівненська область",
+      "swietokrzyskie ": "Свентокшиське воєводство",
+      "smolensk": "Смоленська область",
+      "sumy": "Сумська область",
+      "silezian": "Сілезьке воєводство",
+      "ternopil": "Тернопільська область",
+      "kharkiv": "Харківська область",
+      "kherson": "Херсонська область",
+      "khmelnytskyi": "Хмельницька область",
+      "cherkasy": "Черкаська область",
+      "chernivtsi": "Чернівецька область",
+      "chernihiv": "Чернігівська область"
+    },
+
+    "genres": {
+      "spring": "Весна",
+      "wedding": "Весілля",
+      "harvest": "Жнива",
+      "trinity": "Зелена неділя(Трійця)",
+      "winter": "Зима",
+      "lullabies": "Колискові",
+      "kolyada": "Колодій",
+      "mowing": "Косовиця",
+      "kupalo": "Купало",
+      "lyrics": "Лірика",
+      "shrovetide": "Масляна",
+      "occasion": "Оказія",
+      "autumn": "Осінь",
+      "funeral": "Похорон",
+      "rantsyuvannya": "Ранцювання",
+      "christening": "Родини: Хрестини",
+      "christFeast": "Родини: Застілля"
+    }
+  },
+  "header": {
+    "nav-menu": {
+      "about": "Про проєкт",
+      "map": "Мапа",
+      "educational-section": "Освітній розділ",
+      "news": "Новини",
+      "expedition": "Експедиції",
+      "home": "Головна"
+    },
+    "actions": {
+      "button-donate": "Підтримати"
+    },
+    "pop-up-menu": {
+      "title": "Поділіться проєктом культурного надбання українців зі світом.",
+      "copy": "Копіювати"
+    }
+  },
+  "footer": {
+    "button": "Підтримати проєкт",
+    "partners": "Наші партнери",
+    "contacts": {
+      "title": "Контакти",
+      "email": "clientsupport@gmail.com"
+    },
+    "rules": {
+      "reporting": "Звітність",
+      "policy": "Політика приватності",
+      "terms": "Правила та умови використання",
+      "copyright": "Розробка BazaTraineeUkraine 2023. Всі права захищені"
+    }
+  },
   "home": {
     "home-info": {
       "songs-link": "1000+ пісень",
@@ -38,6 +134,22 @@
     "actions": {
       "button-donate": "Підтримати проєкт",
       "button-share": "Поділитись сайтом"
+    },
+    "home-map": {
+      "popup-btn": "Прослухати записи",
+      "popup-count": "Кількість записів"
+    },
+    "home-actual": {
+      "title": "Актуальні проєкти"
+    },
+    "home-expeditions": {
+      "title": "Експедиції",
+      "button": "Подивитись відео",
+      "router-link": "Дивитись усі відео"
+    },
+    "home-news": {
+      "title": "Новини",
+      "router-link": "Переглянути усі"
     }
   },
   "tapes": {
@@ -46,28 +158,401 @@
       "places": "місця записів"
     }
   },
-   "about": {
-      "stub": "Сторінка 'Про проект' у розробці"
-   },
-   "map":{
-      "stub": "Сторінка 'Мапа' у розробці"
-   },
-   "news":{
-      "stub": "Сторінка 'Новини' у розробці"
-   },
-   "expeditions":{
-      "stub": "Сторінка 'Експедиції' у розробці"
-   },
-   "science":{
-      "stub": "Сторінка 'Освітній розділ' у розробці"
-   },
+  "about": {
+    "stub": "Сторінка 'Про проєкт' у розробці",
+    "title": "Про нас",
+    "team": {
+      "title": "Команда"
+    },
+    "projects": {
+      "title": "Наші проєкти"
+    }
+  },
+  "map": {
+    "filter": {
+      "title": "Фільтр",
+      "button-clear": "Очистити",
+      "button-submit": "Застосувати",
+      "locations": "Місцевість",
+      "song": "Пісня",
+      "search": "Пошук",
+      "categories": {
+        "country": "Країна",
+        "region": "Область",
+        "settlement": "Населений пункт",
+        "genre": "Жанр",
+        "title": "Назва",
+        "found": "Фонд"
+      }
+    },
+    "player": {
+      "counter-title": "Кількість знайдених",
+      "player-title": "Слухати всі знайдені пісні",
+      "songs-list": {
+        "titles": {
+          "photo": "Фото",
+          "name": "Назва",
+          "genre": "Жанр",
+          "recording-location": "Місце запису",
+          "listen": "Слухати"
+        },
+        "song-card": {
+          "detail-button": "Деталі",
+          "song-card-detail": {
+            "record-date": "Дата запису",
+            "collectors": "Збирачі",
+            "ethnographic-region": "Етнографічний регіон",
+            "more-detail-button": "Більше деталей"
+          }
+        }
+      }
+    },
+    "song-page": {
+      "path": {
+        "home": "Головна",
+        "map": "Мапа"
+      },
+      "photos": "Фото",
+      "listen-song": "Слухати пісню",
+      "song-info": {
+        "place": "Місце запису",
+        "region": "Етнографічний регіон",
+        "record": "Запис",
+        "performers": "Виконавці",
+        "data": "Дата запису"
+      }
+    }
+  },
+  "news": {
+    "title": "Новини",
+    "categories": {
+      "all": "Усі",
+      "meetings": "Зустрічі",
+      "lectures": "Лекції",
+      "publications": "Публікації",
+      "workshops": "Майстер-класи",
+      "concerts": "Концерти",
+      "conferences": "Конференції"
+    },
+    "article": {
+      "path": {
+        "home": "Головна"
+      },
+      "about-article": {
+        "title": "Матеріал підготували",
+        "author": "Автор",
+        "editor": "Редактор",
+        "photos": "Світлини",
+        "share": "Поширити"
+      },
+      "latest-news": "Останні новини"
+    }
+  },
+  "expeditions": {
+    "stub": "Сторінка 'Експедиції' у розробці",
+    "title": "Експедиції",
+    "intro": "Пріоритети сучасних – заповнення «білих плям» на фольклористичній карті України (східна Волинь,    Наддніпрянщина, південна Чернігівщина, Сумщина, Берестейщина та інші території) та спеціалізовані регіональні програми з видання    пісенних збірок за матеріалами певних етнографічних локусів.",
+    "categories": {
+      "all": "Усі",
+      "exploring": "Розвідка",
+      "static": "Статичний",
+      "interdisciplinary": "Міждисциплінарна",
+      "thematic": "Тематична",
+      "video-of-ritual": "Відеозапис обряду",
+      "digital-record": "Цифровий запис"
+    },
+    "article": {
+      "path": {
+        "home": "Головна"
+      },
+      "about-article": {
+        "title": "Матеріал підготували",
+        "collectors": "Збирачі",
+        "editor": "Редактор",
+        "video-editing": "Відео-монтаж",
+        "record": "Запис",
+        "share": "Поширити"
+      },
+      "sources": "Джерела",
+      "latest-news": "Пов’язані експедиції"
+    }
+  },
+  "science": {
+    "stub": "Сторінка 'Освітній розділ' у розробці",
+    "title": "Освітній розділ",
+    "categories": {
+      "winters": {
+        "title": "Пісні зимового циклу",
+        "early-traditional": {
+          "title": "Ранньотрадиційний репертуар",
+          "subcategories": {
+            "childrens": "Дитячі  колядки та щедрівки",
+            "praise": "Величальні колядки та щедрівки",
+            "carnival": "Пісні до новорічних карнавальних процесів (Коза, Меланка, Гоготуха, Кінь)",
+            "sowing": "Засівання"
+          }
+        },
+        "late": {
+          "title": "Колядки пізнього походження (християнські)",
+          "subcategories": {
+            "church-canticles": "Різдвяні канти (церковні колядки)",
+            "christmas-psalms": "Різдвяні псальми",
+            "parody-carols": "Пародійні колядки",
+            "nativity-scene": "Вертеп (живий, ляльковий)"
+          }
+        }
+      },
+      "spring": {
+        "title": "Пісні весняного циклу",
+        "early-spring": {
+          "title": "Рання весна. Перехід зима/весна",
+          "subcategories": {
+            "farewell-to-winter": "Проводи Зими",
+            "spring-summons": "Колодка (Колодій)",
+            "shrovetide-songs": "Масляні пісні",
+            "welcoming-spring": "Зустріч весни. Заклички",
+            "spring-rituals": "Креснянка",
+            "porridge": "Каша"
+          }
+        },
+        "spring-equinox": {
+          "title": "Період весняного рівнодення. Великдень",
+          "subcategories": {
+            "easter-morning-songs": "Великодні ранцівки (волочебні)",
+            "spring-dances": "Весняні танки та ігри, гаївки"
+          }
+        },
+        "green-holidays": {
+          "title": "Зелені свята",
+          "subcategories": {
+            "arrow-funeral": "Похорон Стріли",
+            "bush-walking": "Водіння Куста",
+            "mermaid-farewell": "Проводи русалок. Русальні пісні"
+          }
+        }
+      },
+      "summer": {
+        "title": "Пісні літнього циклу",
+        "kupala-songs": {
+          "title": "Купальсько-петрівські пісні",
+          "subcategories": {
+            "kupala": "Купальсько-петрівські пісні"
+          }
+        },
+        "harvest": {
+          "title": "Жнивні пісні",
+          "subcategories": {
+            "harvest": "Жнивні пісні"
+          }
+        },
+        "early-lyrical": {
+          "title": "Приурочені ліричні пісні ранньої стилістики",
+          "subcategories": {
+            "berry-picking": "Ягідні",
+            "harvest-thanks": "Спасовки",
+            "scything-songs": "Строкові",
+            "mower-songs": "Косарські",
+            "summer-feelings": "Літо",
+            "before-harvest": "До полоття"
+          }
+        }
+      },
+      "wedding": {
+        "title": "Весільні пісні",
+        "pre-wedding-rituals": {
+          "title": "Передвесільні обряди і пісні",
+          "subcategories": {
+            "pre-wedding": "Передвесільні обряди і пісні"
+          }
+        },
+        "wedding-ceremony": {
+          "title": "Весілля. Недільні обряди і пісні",
+          "subcategories": {
+            "wedding-ceremony": "Весілля. Недільні обряди і пісні"
+          }
+        },
+        "post-wedding-customs": {
+          "title": "Післявесільні звичаї і пісні",
+          "subcategories": {
+            "post-wedding": "Післявесільні звичаї і пісні"
+          }
+        }
+      },
+      "family": {
+        "title": "Родини і хрестини. Материнський і дитячий фольклор",
+        "musical-decoration": {
+          "title": "Музичне оформлення народин і хрестин",
+          "subcategories": {
+            "birth-christening": "Народини та хрестини"
+          }
+        },
+        "maternal-folk": {
+          "title": "Музичні жанри «материнського фольклору»",
+          "subcategories": {
+            "lullabies": "Колискові пісні",
+            "nursery-rhymes": "Забавлянки",
+            "singing-tales": "Казки зі співом"
+          }
+        },
+        "children's-repertoire": {
+          "title": "Пісні дитячого репертуару",
+          "subcategories": {
+            "carols": "Колядки, щедрівки",
+            "spring-songs": "Веснянки",
+            "occasional-choruses": "Оказіональні приспівки до дощу, сонця, птахів"
+          }
+        }
+      },
+      "ordinary-songs": {
+        "title": "Звичайні пісні",
+        "lyrical": {
+          "title": "Ліричні пісні (за музичними ознаками)",
+          "subcategories": {
+            "early": "Ранні ліричні пісні",
+            "polyphonic": "Багатоголосні пісні з сольним виводом"
+          }
+        },
+        "lyrical-songs-by-theme": {
+          "title": "Ліричні пісні (за тематикою)",
+          "subcategories": {
+            "love": "Про кохання",
+            "family": "Про родинні відносини",
+            "ballads": "Балади",
+            "chumak": "Чумацькі пісні",
+            "barge-hauler": "Бурлацькі пісні",
+            "hirer": "Наймитські пісні",
+            "cossack-historical": "Козацькі пісні, історичні пісні",
+            "recruit-soldier-drayman": "Рекрутські пісні, солдатські пісні, жовнірські пісні",
+            "humorous": "Жартівливі пісні"
+          }
+        },
+        "kolomyiky": {
+          "title": "Коломийки",
+          "subcategories": {
+            "kolomyiky": "Коломийки"
+          }
+        },
+        "dances-choruses": {
+          "title": "Приспівки",
+          "subcategories": {
+            "dances-choruses": "Приспівки до танців"
+          }
+        },
+        "later-era-song-creations": {
+          "title": "Пісенна творчість пізнішого часу",
+          "subcategories": {
+            "folk-romances-cruel-romances": "Народні романси. Жорстокі романси",
+            "shooter-insurgent-songs": "Стрілецькі та повстанські пісні",
+            "psalms": "Псальми",
+            "kychi": "Кічі",
+            "chants": "Частушки"
+          }
+        }
+      },
+      "musical-epos": {
+        "title": "Музичний епос",
+        "byliny": {
+          "title": "Билини",
+          "subcategories": {
+            "kiev-cycle-byliny": "Билини київського циклу"
+          }
+        },
+        "dumas": {
+          "title": "Думи",
+          "subcategories": {
+            "kobzar-artistry": "Кобзарство. Думи"
+          }
+        },
+        "traditional-lyrical": {
+          "title": "Традиційний лірницький репертуар",
+          "subcategories": {
+            "lyre-playing-psalms": "Лірництво. Псальми і канти"
+          }
+        }
+      },
+      "instrumental-music": {
+        "title": "Інструментальна музика. Народні танці",
+        "ukrainian-traditional": {
+          "title": "Українські традиційні музичні інструменти",
+          "subcategories": {
+            "self-playing": "Самозвучні",
+            "wind": "Духові",
+            "string": "Струнні",
+            "percussion": "Ударні"
+          }
+        },
+        "instrumental-ensembles": {
+          "title": "Інструментальні капели. «Троїста музика»",
+          "subcategories": {
+            "instrumental-ensembles": "Інструментальні капели. «Троїста музика»"
+          }
+        },
+        "dance-music": {
+          "title": "Танцювальна музична культура українців",
+          "subcategories": {
+            "ritual-dances": "Питомі танці",
+            "influx-dances": "Напливові танці"
+          }
+        }
+      },
+      "funeral-music": {
+        "title": "Традиційний похорон: музичне оформлення",
+        "lamentation": {
+          "title": "Голосіння",
+          "subcategories": {
+            "lamentation": "Голосіння"
+          }
+        },
+        "memorial-psalms": {
+          "title": "Поминальні псальми",
+          "subcategories": {
+            "memorial-psalms": "Поминальні псальми"
+          }
+        }
+      }
+    },
+    "cycle": {
+      "path": {
+        "home": "Головна"
+      }
+    },
+    "songs": {
+      "player-title": "Слухати пісню",
+      "illustrations": "Ілюстрації"
+    },
+    "song-page": {
+      "video": "Відео",
+      "map": "Карта",
+      "header": {
+        "photos": "Етнографічне фото",
+        "share": "Поширити",
+        "download": "Завантажити запис"
+      },
+      "info": {
+        "title": "Інформація",
+        "place": "Місце запису",
+        "region": "Етнографічний регіон",
+        "record": "Запис",
+        "performers": "Виконавці"
+      }
+    }
+  },
   "error": {
     "error-inner": {
       "title": "404",
-      "text": "Овва! Схоже сторінка, яку Ви шукаєте, наразі недоступна"
+      "text": "Овва! Схоже, сторінка, яку Ви шукаєте, наразі недоступна"
     },
     "actions": {
       "block-btn": "На головну"
+    }
+  },
+  "share": {
+    "dialog": {
+      "text": "Підтримайте збереження етномузичного спадку України та розкажіть про нього світу",
+      "copy": "Копіювати",
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "telegram": "Telegram"
     }
   }
 }

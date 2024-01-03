@@ -1,0 +1,97 @@
+@import '../../../../typography/typography';
+
+.container {
+  display: flex;
+  margin: 148px auto 80px;
+  padding-top: 30px;
+  overflow: hidden;
+}
+
+.science {
+  width: 100%;
+
+  &__title {
+    @include h2-desktop($line-height: 65px);
+
+    margin-bottom: 10px;
+  }
+
+  &__introduction {
+    @include body-desktop;
+
+    max-width: 628px;
+    padding-top: 5px;
+  }
+
+  &__gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 48px 0;
+  }
+
+  &__recomendations {
+    margin-bottom: 24px;
+  }
+}
+
+@media (width <=1440px) {
+  .container {
+    max-width: 1280px;
+    margin:  148px 80px 80px;
+  }
+}
+
+@media (width < 1025px) {
+  .container {
+    margin: 148px 48px 80px;
+  }
+
+  .science {
+    &__recomendations {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+@media (width < 965px) {
+  .science {
+    &__gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (width < 769px) {
+  .container {
+    margin: 130px 48px 80px;
+  }
+
+  .science {
+    width: 100%;
+  }
+}
+
+@media (width < 666px) {
+  .science {
+    &__gallery {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
+@media (width <=465px) {
+  .container {
+    margin: 105px 16px 48px;
+  }
+
+  .science {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+
+    &__gallery {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}

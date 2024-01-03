@@ -1,0 +1,40 @@
+<section class="songs" *ngIf="songs$ | async as songs">
+  <div class="container">
+    <div class="songs__info">
+      <div class="songs__counter">
+        <div class="counter__title">{{ 'map.player.counter-title' | translate }}</div>
+        <div class="counter__result">
+          <span>{{ songs.length }}</span>
+        </div>
+      </div>
+
+      <div class="songs__player">
+        <div class="player__title" *ngIf="selectedSong$ | async as song">
+          {{ 'map.player.player-title' | translate }} <b>{{ song.title }}</b>
+        </div>
+
+        <app-stereo-player #stereoPlayer></app-stereo-player>
+
+        <app-multichanel-player #multiChanelPlayer></app-multichanel-player>
+      </div>
+    </div>
+
+    <div class="songs__playlist">
+      <div class="playlist__titles">
+        <div class="titles title__photo">{{ 'map.player.songs-list.titles.photo' | translate }}</div>
+        <div class="titles title__name">{{ 'map.player.songs-list.titles.name' | translate }}</div>
+        <div class="titles title__record__info">
+          <div class="record__info__genre">{{ 'map.player.songs-list.titles.genre' | translate }}</div>
+          <div class="record__info__recording__location">{{ 'map.player.songs-list.titles.recording-location' | translate }}</div>
+        </div>
+        <div></div>
+        <div class="titles title__listen">{{ 'map.player.songs-list.titles.listen' | translate }}</div>
+      </div>
+      <div>
+        <div class="" *ngFor="let song of songs">
+          <app-playlist-song-card [song]="song"></app-playlist-song-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

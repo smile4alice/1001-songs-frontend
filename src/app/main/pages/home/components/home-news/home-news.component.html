@@ -1,0 +1,37 @@
+<section class="news">
+  <div class="container news__container" *ngIf="articles">
+    <h2 class="news__title">{{'home.home-news.title' | translate}}</h2>
+    <div class="news__items">
+      <div class="news__all">
+        <ng-container *ngFor="let item of articles">
+          <a
+            class="news__all-item"
+            *ngIf="item"
+            [routerLink]="'/news/' + item.id"
+          >
+            <span class="news__all-link"></span>
+            <p class="news__all-date">{{ item.date }}</p>
+            <h4 class="news__all-title">{{ item.title }}</h4>
+            <p class="news__all-location">{{ item.location }}</p>
+          </a>
+        </ng-container>
+      </div>
+      <div class="news__main" *ngIf="articles[0]">
+        <a class="news__main-item" [routerLink]="'/news/' + articles[0].id">
+          <img class="news__main-img" [src]="articles[0].images[0]" alt="{{ articles[0].title }}">
+          <div class="news__main-info">
+            <p class="news__main-date">{{ articles[0].date }}</p>
+            <h4 class="news__main-title">{{ articles[0].title }}</h4>
+            <p class="news__main-location">{{ articles[0].location }}</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="news__router">
+      <a
+        class="news__router-link"
+        [routerLink]="'/news'"
+      >{{'home.home-news.router-link' | translate}}</a>
+    </div>
+  </div>
+</section>

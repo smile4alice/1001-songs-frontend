@@ -1,9 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
 @import '/src/typography/normalize';
 @import '/src/typography/colors';
 @import '/src/typography/fonts';
 @import '/src/typography/typography';
-
+@import '/src/styles/multiselect';
 
 /* ----------GENERAL------------ */
 html {
@@ -19,6 +18,8 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
 }
 
 ul {
@@ -31,7 +32,8 @@ a {
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 *,
@@ -41,3 +43,10 @@ a {
   margin: 0;
   padding: 0;
 }
+
+@media (width <=1376px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
