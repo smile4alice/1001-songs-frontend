@@ -1,27 +1,15 @@
 export interface Article {
   id: number;
-  title: string;
-  text: string[];
-  images: string[];
-  location: string;
-  eventDate: string;
-  authors: Author[];
-  category: string;
-  date: string;
-}
-export interface DataArticle {
-  id: number;
+  news_title: string;
   type_of_news: string;
   date: string;
-  news_title: string;
   location: string;
-  photo: string;
-}
-
-export interface Author {
-  seekers: string[];
+  photo_1: string;
+  text_1: string;
+  photo_2: string;
+  text_2: string;
+  author: string;
   editor: string;
-  video: string;
-  records: string;
+  svitliny: string;
 }
 
