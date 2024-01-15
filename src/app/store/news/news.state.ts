@@ -23,7 +23,7 @@ export interface NewsStateModel {
 export class NewsState {
   constructor(
     private articlesService: ArticlesService,
-    private store: Store,
+    private store: Store
   ) {}
 
   @Selector()
@@ -55,7 +55,6 @@ export class NewsState {
         map((articleData) => {
           return articleData
               .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-              .map((article, index) => ({ ...article, id: index + 1 }));
         }),
         tap((dataNews: Article[]) => {
           const state = ctx.getState();
@@ -67,5 +66,4 @@ export class NewsState {
         })
     );
   }
-
 }
