@@ -88,9 +88,10 @@ export class PlayerState {
 
   @Action(SelectSong)
   selectSong(ctx: StateContext<PlayerStateModel>, action: SelectSong) {
+    console.log('common song player select');
     const state = ctx.getState();
     const selectedSong = state.songsList.find((song: Song) => song.id === action.selectedSongId);
-      console.log(selectedSong)
+    console.log(selectedSong);
     if (!selectedSong) {
       return;
     }

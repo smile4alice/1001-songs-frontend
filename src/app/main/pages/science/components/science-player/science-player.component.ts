@@ -1,27 +1,27 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StreamState } from '../../../../../../shared/interfaces/stream-state.interface';
-import { AudioService } from '../../../../../../shared/services/audio/audio.service';
 import { Observable, Subject, Subscription, takeUntil } from 'rxjs';
-import { PlayerState } from 'src/app/store/player/player.state';
-import { Song } from 'src/app/shared/interfaces/song.interface';
 import { Select, Store } from '@ngxs/store';
 import { SelectNext, SelectPrev } from 'src/app/store/player/player.actions';
 import { MultiAudioService } from 'src/app/shared/services/audio/multi-audio.service';
+import { StreamState } from 'src/app/shared/interfaces/stream-state.interface';
+import { AudioService } from 'src/app/shared/services/audio/audio.service';
+import { ScienceSong } from 'src/app/shared/interfaces/science-song.interface';
+import { ESPlayerState } from 'src/app/store/education/es-player.state';
 
 @Component({
-  selector: 'app-stereo-player',
+  selector: 'app-science-player',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './stereo-player.component.html',
-  styleUrls: ['./stereo-player.component.scss']
+  templateUrl: './science-player.component.html',
+  styleUrls: ['./science-player.component.scss']
 })
-export class StereoPlayerComponent implements OnInit, OnDestroy {
+export class SciencePlayerComponent implements OnInit, OnDestroy {
   private REWIND_STEP: number = 5;
 
   showStereoPlayer: boolean = true;
 
-  @Select(PlayerState.getSelectedSong) selectedSong$?: Observable<Song>;
+  @Select(ESPlayerState.getSelectedSong) selectedSong$?: Observable<ScienceSong>;
   state$!: Observable<StreamState>;
   subState!: Subscription;
   isPreloader = false;
@@ -35,15 +35,9 @@ export class StereoPlayerComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.selectedSong$?.pipe(takeUntil(this.destroy$)).subscribe((song) => {
+    this.selectedSong$?.pipe(takeUntil(this.destroy$)).subscribe((song: ScienceSong) => {
       this.stop();
-      const channels = this.multiAudioService.getChannles(song);
-      if (song.media && channels.length > 1) {
-        this.showStereoPlayer = false;
-      } else {
-        this.showStereoPlayer = true;
-      }
-      if (song.media && song.media.stereo_audio) {
+      if (song.media && song.media && song.media.audio_example) {
         this.openFile(song);
       }
     });
@@ -66,11 +60,11 @@ export class StereoPlayerComponent implements OnInit, OnDestroy {
     this.audioService.playStream(url).subscribe();
   }
 
-  openFile(file: Song) {
+  openFile(file: ScienceSong) {
     this.isPreloader = true;
     this.multiAudioService.stopAll();
     this.audioService.stop();
-    this.playStream(file.media.stereo_audio);
+    this.playStream(file.media.audio_example);
   }
 
   pause() {
