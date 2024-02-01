@@ -64,16 +64,20 @@ export class MapFilterComponent implements OnInit, OnDestroy {
     //   startWith(this.form.getRawValue()),
     //   pairwise(),
     //   map(([previous, current]) => {
-    //     // const changedControl = Object.keys(current).find((key) => current[key as keyof SongFilter] !== previous[key as keyof SongFilter]);
-    //     //  return changedControl as keyof SongFilter;
+    //     const changedControl = Object.keys(current).find((key) => current[key as keyof SongFilter] !== previous[key as keyof SongFilter]);
+    //      return changedControl as keyof SongFilter;
     //   }),
-    //   filter((key) => key !== null && key !== undefined)
-    // );
+    //   filter((key) => key !== null && key !== undefined),
+    // )
     // .subscribe((value: keyof SongFilter) => {
-    // console.log("filter is updated ");
-    //this.store.dispatch(new FilteredMarkers(this.form.value as SongFilter));
-    // this.store.dispatch(new UpdateOptions(this.form.value as SongFilter, value));
+    // // this.store.dispatch(new FetchSongs(this.form.value as SongFilter));
+    // // this.store.dispatch(new FilteredMarkers(this.form.value as SongFilter));
+    // // this.store.dispatch(new UpdateOptions(this.form.value as SongFilter, value));
     //  });
+  }
+
+  selectBlur() {
+    this.store.dispatch(new FetchSongs(this.form.value as SongFilter));
   }
 
   ngOnDestroy() {
