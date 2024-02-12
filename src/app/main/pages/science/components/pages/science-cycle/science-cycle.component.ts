@@ -6,8 +6,9 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { RecommendedSourcesComponent } from '../../shared-components/recommended-sources/recommended-sources.component';
 import { BreadcrumbsComponent } from '../../../../../../shared/shared-components/breadcrumbs/breadcrumbs.component';
-import { ScienceCategory } from '../../../../../../shared/interfaces/science.interface';
+import { ScienceCategory, SongsPrimaryCategory } from '../../../../../../shared/interfaces/science.interface';
 import { scienceCategories } from '../../../../../../static-data/categoriesList';
+import { EducationService } from 'src/app/shared/services/education/education.service';
 
 @Component({
   selector: 'app-science-cycle',
@@ -19,13 +20,32 @@ import { scienceCategories } from '../../../../../../static-data/categoriesList'
 export class ScienceCycleComponent implements OnInit {
   category!: ScienceCategory;
   categoryName!: string;
+  songsCycle: SongsPrimaryCategory = {
+    id: 0,
+    title: 'string',
+    description: 'string',
+    photo1: 'string',
+    photo2: 'string',
+    photo3: 'string',
+    photo4: 'string',
+    photo5: 'string'
+  };
+
   constructor(
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private educationService: EducationService
   ) {}
 
   ngOnInit(): void {
     this.checkAndSetSelectedCategory();
+   // const currentCycle = this.route.snapshot.params['category'];
+    // const cycle = genreCycles[currentCycle as keyof typeof genreCycles];
+    // this.educationService.fetchESData().subscribe((d: any) => {
+    //   const data = d.find((el: any) => el.title === cycle);
+    //   console.log(data);
+    //   this.songsCycle = data;
+    // });
   }
 
   private checkAndSetSelectedCategory() {
