@@ -9,18 +9,21 @@ import { AboutService } from "../../../shared/services/about/about.service";
 import { FormattingTextService } from "../../../shared/services/formatting-text/formating-text.service";
 import { AboutTeam, Content, DataAboutContent } from "../../../shared/interfaces/about.interface";
 import { FadeInCarouselComponent } from "../../../shared/shared-components/fade-in-carousel/fade-in-carousel.component";
+import {SafeHtmlPipe} from "../../../shared/pipes/safe-html.pipe";
+
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
   standalone: true,
-  imports: [TranslateModule, CommonModule, AboutTeamComponent, SliderComponent, FadeInCarouselComponent]
+  imports: [TranslateModule, CommonModule, AboutTeamComponent, SliderComponent, FadeInCarouselComponent, SafeHtmlPipe]
 })
+
 export class AboutComponent implements OnDestroy {
   private dataAboutContent$: Observable<DataAboutContent>;
   public aboutTeam$: Observable<AboutTeam[]>;
-  public content!: Content;
+  public content!: Content[];
   private subscription$: Subscription;
 
   constructor(
@@ -38,6 +41,4 @@ export class AboutComponent implements OnDestroy {
   ngOnDestroy(): void {
     this.subscription$.unsubscribe();
   }
-
-  protected readonly Array = Array;
 }
