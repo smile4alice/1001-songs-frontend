@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavigationEnd, Router } from '@angular/router';
-import { filter } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
 import { crumbs } from '../../enums/breadcrumbs';
 
 @Component({
@@ -11,11 +10,14 @@ import { crumbs } from '../../enums/breadcrumbs';
   templateUrl: './breadcrumbs.component.html',
   styleUrls: ['./breadcrumbs.component.scss']
 })
-export class BreadcrumbsComponent implements OnInit {
+export class BreadcrumbsComponent {
   homeLink = { key: 'home', name: 'Головна' };
   breadcrumbs: { path: string; name: string }[] = [];
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+  ) {
     const url = window.location.href;
     const path = url.split('#')[1];
     if (path) {
@@ -23,14 +25,14 @@ export class BreadcrumbsComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
-    this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe((route: NavigationEnd | unknown) => {
-      if (route instanceof NavigationEnd) {
-        const path = route.urlAfterRedirects;
-        this.setCrumbs(path);
-      }
-    });
-  }
+  // ngOnInit(): void {
+  // this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe((route: NavigationEnd | unknown) => {
+  //   if (route instanceof NavigationEnd) {
+  //     const path = route.urlAfterRedirects;
+  // this.setCrumbs(this.path);
+  //   }
+  // });
+  //}
 
   setCrumbs(path: string) {
     const pathSegments = path.split('/').filter((segment: string) => segment !== '');
