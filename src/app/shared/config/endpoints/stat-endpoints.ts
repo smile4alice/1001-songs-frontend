@@ -15,5 +15,15 @@ export const StatEndpoints = {
   genre: 'genre',
   about: 'about',
   team: 'team',
-  filter: 'filter'
+  filter: 'filter',
+  mapFilter: {
+    countries: 'filter/location/countries',
+    regions: 'filter/location/regions',
+    cities: 'filter/location/cities',
+    funds: 'filter/song/funds',
+    genres: 'filter/song/genres'
+  },
+  map: {
+    geotag: 'map/filter/geotag'
+  }
 };
