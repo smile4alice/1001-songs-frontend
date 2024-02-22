@@ -33,7 +33,7 @@ export class MapFilterComponent implements OnInit, OnDestroy {
   isShowFilter = false;
   private destroy$ = new Subject<void>();
 
-  localSongs: { title: string; id: number }[] = [];
+  localSongs: { title: string; id: string }[] = [];
 
   form = new FormGroup({
     country: new FormControl<string[]>([]),
@@ -44,8 +44,7 @@ export class MapFilterComponent implements OnInit, OnDestroy {
     fund: new FormControl<string[]>([])
   });
 
-  titles: { title: string; id: number }[] = [];
-  previousValue: SongFilter = { ...(this.form.value as SongFilter) };
+  titles: { title: string; id: string }[] = [];
 
   constructor(private store: Store) {}
 
@@ -53,7 +52,7 @@ export class MapFilterComponent implements OnInit, OnDestroy {
     this.store.dispatch(new InitFilterOptions());
 
     this.songs.subscribe((songs) => {
-      this.localSongs = songs.map((song) => ({ title: song.title, id: song.id }));
+      this.localSongs = songs.map((song) => ({ title: song.title, id: song.id.toString() }));
     });
 
     this.form
