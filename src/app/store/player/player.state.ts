@@ -49,6 +49,7 @@ export class PlayerState {
     if (!selectedSong) {
       return;
     }
+    // console.log(selectedSong)
     return ctx.setState({
       ...state,
       songs: [selectedSong]
@@ -78,7 +79,6 @@ export class PlayerState {
 
     return this.filterMapService.fetchSongsByFilter(action.filter).pipe(
       tap((response: object) => {
-        console.log('SONGS : Main response', response);
         const data = response as { items: PlaylistSong[] };
         ctx.setState({
           ...state,
