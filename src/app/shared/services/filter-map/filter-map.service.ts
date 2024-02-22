@@ -13,6 +13,7 @@ import {
   OptionsSongFilter,
   SongFilter
 } from '../../interfaces/map-marker';
+import { PlaylistSong } from '../../interfaces/song.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -60,9 +61,11 @@ export class FilterMapService {
     const requestParams = fullParams.join('&');
     fullRequest += requestParams.length > 0 ? '?' + requestParams : '';
 
-     console.log('REQUEST ', fullRequest);
-
-    return this.http.get(fullRequest);
+    return this.http.get(fullRequest).pipe(
+      catchError(() => {
+        return [{} as PlaylistSong];
+      })
+    );
   }
 
   fetchSongById(id: string) {
