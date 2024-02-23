@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
-import { filter, Observable, Subject } from 'rxjs';
+import { debounceTime, filter, Observable, Subject, takeUntil } from 'rxjs';
 import { Select, Store } from '@ngxs/store';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
@@ -33,7 +33,7 @@ export class MapFilterComponent implements OnInit, OnDestroy {
   isShowFilter = false;
   private destroy$ = new Subject<void>();
 
-  localSongs: { title: string; id: string }[] = [];
+  localSongs: string[] = [];
 
   form = new FormGroup({
     country: new FormControl<string[]>([]),
@@ -44,7 +44,7 @@ export class MapFilterComponent implements OnInit, OnDestroy {
     fund: new FormControl<string[]>([])
   });
 
-  autocompleteSongs: { title: string; id: number }[] = [];
+  autocompleteSongs: string[] = [];
   previousValue: SongFilter = { ...(this.form.value as SongFilter) };
 
   constructor(private store: Store) {}
@@ -52,11 +52,11 @@ export class MapFilterComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.store.dispatch(new InitFilterOptions());
 
-    
-
     this.form
       .get('title')
-      ?.valueChanges.pipe(
+      ?.valueChanges.pipe(takeUntil(this.destroy$))
+      .pipe(debounceTime(500))
+      .pipe(
         filter((query: string | null) => {
           if (query && query.length <= 3) {
             this.autocompleteSongs = [];
@@ -64,29 +64,36 @@ export class MapFilterComponent implements OnInit, OnDestroy {
           return query ? query.length >= 3 : false;
         })
       )
-
       .subscribe(() => {
         this.songs.pipe().subscribe((songs) => {
-          this.autocompleteSongs = songs.map((song) => ({ title: song.title, id: song.id }));
+          if (!songs) {
+            this.autocompleteSongs = [];
+            return;
+          }
+          this.autocompleteSongs = songs.map((song) => song.title);
         });
-        this.store.dispatch(new FetchSongs(this.form.value as SongFilter))
+        this.store.dispatch(new FetchSongs(this.form.value as SongFilter));
       });
   }
 
-  getSelectedSong(event: { title: string; id: number }) {
+  getSelectedSong(songTitle: string) {
     this.autocompleteSongs = [];
-    this.store.dispatch(new FindSongById(event.id));
+    this.store.dispatch(new FindSongById(songTitle));
     const filter = new SongFilter();
-    filter.title = event.title;
+    filter.title = songTitle;
     this.store.dispatch(new FetchMarkers(filter));
   }
 
   selectBlur() {
-    this.form.get('title')?.setValue('');
+    //this.form.get('title')?.setValue('');
     this.autocompleteSongs = [];
     this.changeFilter.emit(this.form.value as SongFilter);
     this.store.dispatch(new SetShownOptions(this.form.value as SongFilter));
     this.store.dispatch(new FetchMarkers(this.form.value as SongFilter));
+  }
+
+  searchBlur(ev: string) {
+    return ev;
   }
 
   ngOnDestroy() {
