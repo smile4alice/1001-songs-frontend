@@ -39,7 +39,7 @@ import {
   styleUrls: ['./song-map.component.scss']
 })
 export class SongMapComponent implements OnInit, OnDestroy {
-  @Select(PlayerState.getSelectedSong) selectedSong$?: Observable<Song>;
+  // @Select(PlayerState.getSelectedSong) selectedSong$?: Observable<Song>;
   @Select(PlayerState.getSongs) songs$!: Observable<Song[]>;
 
   song$: BehaviorSubject<PlayerSong> = new BehaviorSubject<PlayerSong>({} as PlayerSong);
