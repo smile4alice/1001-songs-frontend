@@ -10,15 +10,16 @@ import { AudioService } from '../../../../../../shared/services/audio/audio.serv
 import { SafeHtmlPipe } from '../../../../../../shared/pipes/safe-html.pipe';
 import { Observable, Subject, of, takeUntil } from 'rxjs';
 import { Order } from 'src/app/shared/interfaces/order.interface';
-import { PlayerService } from 'src/app/shared/services/player/player.service';
+import {VideoPlayerComponent} from "../../../../../../shared/shared-components/video-player/video-player.component";
 
 @Component({
   selector: 'app-playlist-song-card',
   standalone: true,
-  imports: [CommonModule, StereoPlayerComponent, MultichanelPlayerComponent, TranslateModule, MatIconModule, RouterLink, SafeHtmlPipe],
+  imports: [CommonModule, StereoPlayerComponent, MultichanelPlayerComponent, TranslateModule, MatIconModule, RouterLink, SafeHtmlPipe, VideoPlayerComponent],
   templateUrl: './playlist-song-card.component.html',
   styleUrls: ['./playlist-song-card.component.scss']
 })
+
 export class PlaylistSongCardComponent implements OnInit, OnDestroy {
   screenWidth: number = 0;
   @Input() song: PlaylistCardSong = {} as PlaylistCardSong;
@@ -36,8 +37,7 @@ export class PlaylistSongCardComponent implements OnInit, OnDestroy {
   destroy$: Subject<void> = new Subject<void>();
 
   constructor(
-    private audioService: AudioService,
-    private playerService: PlayerService
+    private audioService: AudioService
   ) {}
 
   ngOnInit(): void {
