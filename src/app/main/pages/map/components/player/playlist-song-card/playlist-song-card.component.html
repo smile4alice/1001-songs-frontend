@@ -1,5 +1,11 @@
 <div class="playlist__song__card">
-  <div class="song__card__header" [ngClass]="{'opened': isOpened}" (click)="toggleMobileVisibility()" (keyup)="handleKeyUpEvent($event)" tabindex="0">
+  <div
+    class="song__card__header"
+    [ngClass]="{ opened: isOpened }"
+    (click)="toggleMobileVisibility()"
+    (keyup)="handleKeyUpEvent($event)"
+    tabindex="0"
+  >
     <div class="song__card__img"></div>
 
     <div class="song__card__name__info">
@@ -8,8 +14,8 @@
       </div>
     </div>
 
-    <div class="song__card__song__info">
-      <div class="song__info__genre">{{  song.genres && song.genres.length > 0 ? song.genres[0] : 'Unknown' }}</div>
+    <div class="song__card__song__info" >
+      <div class="song__info__genre">{{ song.genres && song.genres.length > 0 ? song.genres[0] : 'Unknown' }}</div>
       <div class="song__info__location">
         {{ song.city ? song.city : '...' }}
       </div>
@@ -17,7 +23,7 @@
 
     <div
       class="song__card__btn btn-detail"
-      *ngIf="isShowDetail; else routerButton"
+     
       (click)="toggleVisibility()"
       (keyup)="handleKeyUpEvent($event)"
       tabindex="0"
@@ -32,9 +38,9 @@
 
     <div class="song__card__listen">
       <mat-icon *ngIf="!hasMedia" class="nomedia" aria-hidden="false" aria-label="Example home icon" fontIcon="music_off"></mat-icon>
-      <button *ngIf="hasMedia" class="btn__listen" [disabled]="!hasMedia" (click)="openCurrentFile()">
+      <button *ngIf="hasMedia" class="btn__listen" [disabled]="!hasMedia" (click)="playPauseSong()">
         <svg
-          *ngIf="!isPlay || !isSelectSong"
+          *ngIf="!isPlay"
           class="listen__desktop"
           width="72"
           height="72"
@@ -45,7 +51,7 @@
           <use xlink:href="./assets/sprites.svg#playDesktop"></use>
         </svg>
         <svg
-          *ngIf="isPlay && isSelectSong"
+          *ngIf="isPlay"
           class="listen__desktop"
           width="72"
           height="72"
@@ -56,54 +62,6 @@
           <use xlink:href="./assets/sprites.svg#pauseDesktop"></use>
         </svg>
       </button>
-    </div>
-  </div>
-  <div class="song__card__detail" *ngIf="isShowDetail" [ngClass]="{'opened': isOpened}">
-    <div class="detail__video">
-      <app-video-player [srcUrl]="song.video_url"></app-video-player>
-    </div>
-
-
-
-    <div class="detail__info">
-      <div class="info__date__record">
-        <div class="date__record__title">{{ 'map.player.songs-list.song-card.song-card-detail.record-date' | translate }}</div>
-        <div class="date__record__date">{{ song.recording_date | date: 'dd.MM.yyyy' }}</div>
-      </div>
-
-      <div class="info__collectors">
-        <div class="collectors__title">{{ 'map.player.songs-list.song-card.song-card-detail.collectors' | translate }}</div>
-        <div class="collectors__names">
-          <ul class="names__names__list">
-            <li>
-              <span *ngFor="let collector of song.collectors; let last = last">
-                {{ collector }}{{ !last ? ', ' : '' }}
-              </span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="info__ethnographic__region">
-        <div class="ethnographic__region__title">
-          {{ 'map.player.songs-list.song-card.song-card-detail.ethnographic-region' | translate }}
-        </div>
-        <div class="ethnographic__region__region">{{ song.ethnographic_district }}</div>
-      </div>
-
-      <div class="info__date__record">
-        <div class="date__record__title">Фонд: </div>
-        <div class="date__record__date">{{ song.fund}}</div>
-      </div>
-
-      <button class="info__btn__more__detail" [routerLink]="song.id + ''">
-        {{ 'map.player.songs-list.song-card.song-card-detail.more-detail-button' | translate }}
-      </button>
-    </div>
-
-    <div class="detail__song__text">
-      <div class="song__text__content" *ngIf="song.song_text" [innerHTML]="song.song_text | formatText"></div>
-      <div class="song__text__content" *ngIf="!song.song_text">Текст пісні відсутній...</div>
     </div>
   </div>
 </div>
