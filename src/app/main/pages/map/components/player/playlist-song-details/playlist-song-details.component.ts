@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PlaylistSong } from 'src/app/shared/interfaces/song.interface';
 import { FormatTextPipe } from 'src/app/shared/pipes/format-text.pipe';
@@ -20,6 +20,8 @@ export class PlaylistSongDetailsComponent implements OnInit, OnDestroy {
   @Input() order$: Observable<Order> = of({ id: 0, type: '' });
   @Input() song: PlaylistSong = {} as PlaylistSong;
 
+  @Output() ytStartsPlay = new EventEmitter<Order>();
+
   destroy$: Subject<void> = new Subject<void>();
 
   ngOnInit(): void {
@@ -28,9 +30,15 @@ export class PlaylistSongDetailsComponent implements OnInit, OnDestroy {
     });
   }
 
+  onYtStartsPlay(event: Order) {
+    this.ytStartsPlay.emit(event);
+  }
+
   private handleInputOrder(order: Order) {
-    if (order.id === this.song.id) {
+    if (order.id === this.song.id && order.type === 'details-toggle') {
       this.isOpened = !this.isOpened;
+    } else if (order.id !== this.song.id && order.type === 'details-toggle') {
+      this.isOpened = false;
     }
   }
 

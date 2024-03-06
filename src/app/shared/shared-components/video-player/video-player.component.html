@@ -1,11 +1,13 @@
 <div class="player">
   <img *ngIf="isPreviewDisplayed" [src]="previewUrl | sanitize" alt="Expedition image" />
-  <button class="player__control"
-          *ngIf="isPreviewDisplayed && widthIcon"
-          [style.width.px]="widthIcon"
-          [style.height.px]="widthIcon"
-          (click)="playVideo()"
-  >&#9658;
+  <button
+    class="player__control"
+    *ngIf="isPreviewDisplayed && widthIcon"
+    [style.width.px]="widthIcon"
+    [style.height.px]="widthIcon"
+    (click)="playVideo()"
+  >
+    &#9658;
   </button>
-  <iframe #player class="player__iframe" [src]="embeddedUrl | sanitize" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+  <div class="player__iframe" #playerContainer></div>
 </div>

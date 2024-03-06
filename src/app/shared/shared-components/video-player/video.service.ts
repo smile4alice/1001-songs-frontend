@@ -4,8 +4,15 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class VideoService {
-
   constructor() {}
+
+  getIdFromUrl(url: string): string {
+    const fragmets1 = url.split('/');
+    const conatainedId = fragmets1[fragmets1.length - 1];
+    const fragmets2 = conatainedId.split('=');
+    const id = fragmets2[fragmets2.length - 1];
+    return id;
+  }
 
   getEmbeddedUrl(url: string): string {
     const service = 'https://www.youtube.com/embed/';
@@ -28,5 +35,4 @@ export class VideoService {
     }
     return '';
   }
-
 }
