@@ -159,6 +159,12 @@ export class PlayerComponent implements AfterViewInit, OnDestroy, OnInit {
     }
   }
 
+  // ngAfterViewInit(): void {
+  //   setTimeout(() => {
+  //     if (this.songsContainer) this.distanceToTop = this.calculateDistanceToTop();
+  //   });
+  // }
+
   calculateDistanceToTop(): number {
     this.onResize();
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;

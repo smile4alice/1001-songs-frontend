@@ -57,7 +57,7 @@ export class FilterMapService {
     const city = options.city.length ? options.city.map((city) => `city_id=${city}`) : '';
     const genre = options.genre.length ? options.genre.map((genre) => `genre_id=${genre}`) : '';
     const fund = options.fund.length ? options.fund.map((fund) => `fund_id=${fund}`) : '';
-    const fullParams = [search, ...country, ...region, ...city, ...genre, ...fund];
+    const fullParams = [search, ...country, ...region, ...city, ...genre, ...fund, paginationParams];
 
     const requestParams = fullParams.join('&') + paginationParams;
     fullRequest += requestParams.length > 0 ? '?' + requestParams : '';
