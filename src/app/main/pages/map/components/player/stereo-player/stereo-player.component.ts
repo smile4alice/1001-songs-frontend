@@ -86,7 +86,13 @@ export class StereoPlayerComponent implements OnInit, OnDestroy {
   setUpVolume(eventObj: Event) {
     const event = eventObj as { target: object };
     const target = event.target as { value: number };
-    this.isMuted = target.value === 0;
+
+    if (target.value === 0) {
+      this.isMuted = true;
+    } else {
+      this.isMuted = false;
+    }
+
     this.audioService.setUpVolume(target.value);
   }
 
